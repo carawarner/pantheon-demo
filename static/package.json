@@ -1,7 +1,7 @@
 {
-  "name": "pantheon-generator",
+  "name": "pantheon-demo",
   "version": "1.0.0",
-  "description": "Pantheon Generator",
+  "description": "Pantheon Demo",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --progress --config webpack.config.js",
