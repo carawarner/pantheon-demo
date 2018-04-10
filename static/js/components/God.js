@@ -1,7 +1,7 @@
 import React from "react";
 
-export default class God extends React.Component {
-  render() {
-    return <div>I am a God</div>
-  }
+export const God = function(props) {
+  return (
+    <div>{props.god.name} {props.god.epithet}</div>
+  );
 }
