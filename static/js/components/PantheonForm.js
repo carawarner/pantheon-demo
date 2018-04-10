@@ -1,5 +1,22 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const PantheonForm = function(props) {
-  return "This will be the form for generating Pantheons";
+export default class PantheonForm extends React.Component {
+  constructor(props) {
+    super(props);
+    //TODO: assign default values to props
+  }
+
+  render() {
+    return (
+      <button onClick={this.props.onSubmit}>Generate a Pantheon</button>
+    );
+  }
+}
+
+PantheonForm.propTypes = {
+  namesList: PropTypes.string,
+  genePool: PropTypes.string,
+  numGenerations: PropTypes.number,
+  rateOfMutation: PropTypes.number
 }
