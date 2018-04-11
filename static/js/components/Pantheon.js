@@ -8,7 +8,7 @@ export const Pantheon = function(props) {
       {props.gods.map(god => (
         <God god={god}/>
       ))}
-    </div>
+    </section>
   );
 }
 
