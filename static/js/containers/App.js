@@ -4,7 +4,9 @@ import PantheonContainer from "./PantheonContainer";
 export default class App extends React.Component {
   render() {
     return (
-      <PantheonContainer />
+      <div id="typography">
+        <PantheonContainer />
+      </div>
     );
   }
 }
