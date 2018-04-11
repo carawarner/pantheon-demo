@@ -1,0 +1,21 @@
+// Pallet
+
+$white: #FFF;
+$black: #333;
+$main-color: #E0A748;   // "anzac" (yellow)
+$light-color: #F8FAF9;  // "snow drift" (white)
+$light-accent-color: #8DA3BE; // "nepal" (pale blue)
+$dark-color: #3C4453;     // "bright gray" (dk gray)
+$dark-accent-color: #B07357;    // "santa fe" (rust)
+
+// Uses
+
+$background-color: $light-color;
+// button colors assigned in _buttons.scss
+$text-color: $black;
+$heading-color: $main-color;
+$subheading-color: $light-accent-color;
+
+$link-color: $dark-accent-color;
+$link-hover-color: saturate($dark-accent-color, 10%);
+$link-visited-color: $dark-accent-color; // diff is distracting
