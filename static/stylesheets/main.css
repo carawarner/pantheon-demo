@@ -1,20 +1,36 @@
-/*
- * This parial was copied from TheSassWay and modified.
- */
-/*
- * Variables
- */
+body {
+  color: #333;
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6; }
+
+.h1, .typography h1, .typography .h1, .h2, .typography h2, .typography .h2, .h3, .typography h3, .typography .h3, .h4, .typography h4, .typography .h4, .h5, .typography h5, .typography .h5, .h6, .typography h6, .typography .h6 {
+  color: #E0A748;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; }
+
+.pantheon-form-button {
+  height: 40px;
+  padding: 0px 30px;
+  border: none;
+  outline: none;
+  background-color: #B07357;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase; }
+  .pantheon-form-button:hover {
+    background-color: #c96a3e; }
+
 /*
  * Base styles
  */
 body {
   background-color: #F8FAF9;
   color: #333;
-  font-size: 18px;
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 300;
-  padding: 30px;
-  line-height: 1.6; }
+  padding: 30px; }
 
 /*
  * Typography
@@ -25,28 +41,13 @@ body {
   .link:visited, .typography a:visited {
     color: #B07357; }
   .link:hover, .typography a:hover, .link:visited:hover, .typography a:visited:hover {
-    color: #c96a3e;
+    color: #bc6e4b;
     text-decoration: underline; }
-
-.fixed, .typography pre, .typography code {
-  font-family: "Andale Mono", AndaleMono, monospace;
-  font-size: 15px;
-  line-height: 1.2; }
-
-.quiet {
-  font-color: #8DA3BE; }
-
-.loud, .bold, .typography b, .typography strong {
-  font-color: #E0A748; }
 
 .italic, .typography i, .typography em {
   font-style: italic; }
 
 .bold, .typography b, .typography strong {
-  font-weight: 700; }
-
-.h1, .typography h1, .typography .h1, .h2, .typography h2, .typography .h2, .h3, .typography h3, .typography .h3, .h4, .typography h4, .typography .h4, .h5, .typography h5, .typography .h5, .h6, .typography h6, .typography .h6 {
-  font-family: "Roboto Condensed", sans-serif;
   font-weight: 700; }
 
 .h1, .typography h1, .typography .h1, .h2, .typography h2, .typography .h2 {
@@ -122,8 +123,8 @@ body {
 .text-right {
   text-align: right  !important; }
 
-.pantheon-form button {
-  color: #8DA3BE; }
+.pantheon-form-button {
+  margin: 10px 0px; }
 
 .god {
   display: block; }

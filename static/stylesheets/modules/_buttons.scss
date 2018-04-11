@@ -1,0 +1,25 @@
+%button {
+  height: 40px;
+  padding: 0px 30px;
+  border: none;
+  outline: none;
+  background-color: $dark-accent-color;
+  color: $white;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  &:hover {
+    background-color: saturate($dark-accent-color, 20%);
+  }
+}
+
+%inverted-button { @extend %button }
+%inverted-button {
+  background-color: $light-accent-color;
+  color: $black;
+  text-transform: uppercase;
+  &:hover {
+    background-color: saturate($light-accent-color, 20%);
+  }
+}

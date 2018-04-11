@@ -35,7 +35,7 @@ export default class PantheonContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="typography">
         <PantheonForm onSubmit={this.insertPlaceholder}/>
         <Pantheon gods={this.state.gods}/>
       </div>
