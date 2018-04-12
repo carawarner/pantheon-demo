@@ -4,11 +4,11 @@ import { God } from "./God";
 
 export const Pantheon = function(props) {
   return (
-    <section className="pantheon">
+    <div>
       {props.gods.map(god => (
         <God god={god}/>
       ))}
-    </section>
+    </div>
   );
 }
 
