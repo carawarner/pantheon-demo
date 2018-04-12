@@ -43,14 +43,14 @@ export default class PantheonContainer extends React.Component {
   render() {
     return (
       <div>
-        <section>
+        <section className="has-top-divider">
           <PantheonForm
             fetchPantheon={this.fetchPantheon}
             sourcesOfNames={this.fetchSourcesOfNames()}
             sourcesOfTexts={this.fetchSourcesOfTexts()}
           />
         </section>
-        <section>
+        <section className="has-top-divider">
           <Pantheon gods={this.state.gods}/>
         </section>
       </div>
