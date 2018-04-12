@@ -5,8 +5,11 @@ import { God } from "./God";
 export const Pantheon = function(props) {
   return (
     <div>
-      {props.gods.map(god => (
-        <God god={god}/>
+      <h3 className="title">Results</h3>
+      {props.gods.map((god,i) => (
+        <div key={'god' + i}>
+          <God god={god}/>
+        </div>
       ))}
     </div>
   );
