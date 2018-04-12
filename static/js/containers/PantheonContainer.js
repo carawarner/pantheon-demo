@@ -7,18 +7,18 @@ export default class PantheonContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { gods: [] }
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fetchPantheon = this.fetchPantheon.bind(this);
   }
 
   componentDidMount() {
+    //TODO: This will be unecessary when empty state UI is handled
     this.setState({
       gods: pantheonA
     });
   }
 
-  handleSubmit(e) {
+  fetchPantheon(options) {
     //TODO: This placeholder should be replaced with an API call
-    e.preventDefault;
     if (this.state.gods == pantheonA) {
       this.setState({
         gods: pantheonB
@@ -30,12 +30,12 @@ export default class PantheonContainer extends React.Component {
     }
   }
 
-  sourcesOfNames() {
+  fetchSourcesOfNames(options) {
     //TODO: This placeholder should be replaced with an API call
     return ["norwegian", "french", "german"]
   }
 
-  sourcesOfTexts() {
+  fetchSourcesOfTexts() {
     //TODO: This placeholder should be replaced with an API call
     return ["fairy-tales", "nutrition", "everything"];
   }
@@ -44,9 +44,9 @@ export default class PantheonContainer extends React.Component {
     return (
       <section>
           <PantheonForm
-            handleSubmit={this.handleSubmit}
-            sourcesOfNames={this.sourcesOfNames()}
-            sourcesOfTexts={this.sourcesOfTexts()}
+            fetchPantheon={this.fetchPantheon}
+            sourcesOfNames={this.fetchSourcesOfNames()}
+            sourcesOfTexts={this.fetchSourcesOfTexts()}
           />
           <Pantheon gods={this.state.gods}/>
       </section>
