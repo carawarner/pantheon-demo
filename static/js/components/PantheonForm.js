@@ -35,16 +35,16 @@ export default class PantheonForm extends React.Component {
         <label>
           Source of names:
           <select name="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
-            {this.props.sourcesOfNames.map(namesSource => (
-              <option value={namesSource}>{namesSource}</option>
+            {this.props.sourcesOfNames.map((namesSource,i) => (
+              <option value={namesSource} key={"namesSource"+i}>{namesSource}</option>
             ))}
           </select>
         </label>
         <label>
           Source of texts:
           <select name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
-            {this.props.sourcesOfTexts.map(textsSource => (
-              <option value={textsSource}>{textsSource}</option>
+            {this.props.sourcesOfTexts.map((textsSource,i) => (
+              <option value={textsSource} key={"textsSource"+i}>{textsSource}</option>
             ))}
           </select>
         </label>
