@@ -9354,11 +9354,21 @@ h2.title {
     line-height: 1.42857143;
     color: #777; }
 
+/*
+ * My base styles
+ */
 body {
   background-color: #FFF;
   color: #3C4858;
   padding: 30px; }
 
+.mlr-auto {
+  margin-left: auto;
+  margin-right: auto; }
+
+/*
+ * Typography
+ */
 .link {
   color: #F4BC50;
   font-weight: 600;

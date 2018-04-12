@@ -6,8 +6,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container text-center" id="typography">
-        <About />
-        <PantheonContainer />
+        <div className="col-md-6 mlr-auto">
+          <About />
+          <PantheonContainer />
+        </div>
       </div>
     );
   }

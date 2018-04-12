@@ -31,25 +31,36 @@ export default class PantheonForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Source of names:
-          <select name="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
-            {this.props.sourcesOfNames.map((namesSource,i) => (
-              <option value={namesSource} key={"namesSource"+i}>{namesSource}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Source of texts:
-          <select name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
-            {this.props.sourcesOfTexts.map((textsSource,i) => (
-              <option value={textsSource} key={"textsSource"+i}>{textsSource}</option>
-            ))}
-          </select>
-        </label>
-        <input type="submit" value="Generate" />
-      </form>
+      <div>
+        <h3 className="title">Parameters</h3>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label>
+              Source of names:
+              <select className="form-control" name="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
+                {this.props.sourcesOfNames.map((namesSource,i) => (
+                  <option value={namesSource} key={"namesSource"+i}>{namesSource}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div className="form-group">
+            <label>
+              Source of texts:
+              <select className="form-control" name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
+                {this.props.sourcesOfTexts.map((textsSource,i) => (
+                  <option value={textsSource} key={"textsSource"+i}>{textsSource}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div className="form-group">
+            <input type="submit" value="Generate" className="btn"/>
+          </div>
+        </form>
+      </div>
     );
   }
 }
