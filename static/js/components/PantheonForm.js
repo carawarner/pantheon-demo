@@ -9,9 +9,9 @@ export default class PantheonForm extends React.Component {
 
   render() {
     return (
-      <section>
-        <button className="btn" onClick={this.props.onSubmit}>Generate a Pantheon</button>
-      </section>
+      <div>
+        <button className="btn" onClick={this.props.onSubmit}>Submit</button>
+      </div>
     );
   }
 }

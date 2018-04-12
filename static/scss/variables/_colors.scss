@@ -2,19 +2,24 @@
 
 $white: #FFF;
 $black: #333;
-$main-color: #E0A748;   // "anzac" (yellow)
-$light-color: #F8FAF9;  // "snow drift" (white)
-$light-accent-color: #8DA3BE; // "nepal" (pale blue)
-$dark-color: #3C4453;     // "bright gray" (dk gray)
-$dark-accent-color: #B07357;    // "santa fe" (rust)
+$main-color: #F4BC50;           // casablanca
+$light-color: #F5F6F4;          // "desert storm
+$light-accent-color: #9B9FA8;   // "santas gray"
+$dark-color: #838198;           // "waterloo"
+$dark-accent-color: #3C4858;    // unknown
 
-// Applied
+// Global
 
-$background-color: $light-color;
-$text-color: $black;
+$background-color: $white;
+$text-color: $dark-accent-color;
 $heading-color: $main-color;
-$subheading-color: $light-accent-color;
+$subheading-color: $dark-color;
 
-$link-color: $dark-accent-color;
-$link-hover-color: saturate($dark-accent-color, 10%);
-$link-visited-color: $dark-accent-color; // diff is distracting
+$link-color: $main-color;
+$link-hover-color: saturate($main-color, 10%);
+$link-visited-color: $main-color; // diff is distracting
+
+// Overrides for Materials Kit
+
+$btn-default-bg: $dark-color;
+$brand-primary: $main-color;

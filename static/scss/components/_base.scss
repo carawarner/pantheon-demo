@@ -1,0 +1,30 @@
+@import "../variables/all";
+
+/*
+ * My base styles
+ */
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 30px;
+}
+
+/*
+ * Typography
+ */
+
+.link {
+  color: $link-color;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover, &:visited:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
