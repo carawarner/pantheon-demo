@@ -7,8 +7,7 @@ export default class PantheonContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { gods: [] }
-    this.fetchGods = this.fetchGods.bind(this);
-    this.insertPlaceholder = this.insertPlaceholder.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -17,11 +16,9 @@ export default class PantheonContainer extends React.Component {
     });
   }
 
-  fetchGods() {
-    //TODO
-  }
-
-  insertPlaceholder() {
+  handleSubmit(e) {
+    //TODO: This placeholder should be replaced with an API call
+    e.preventDefault;
     if (this.state.gods == pantheonA) {
       this.setState({
         gods: pantheonB
@@ -33,10 +30,24 @@ export default class PantheonContainer extends React.Component {
     }
   }
 
+  sourcesOfNames() {
+    //TODO: This placeholder should be replaced with an API call
+    return ["norwegian", "french", "german"]
+  }
+
+  sourcesOfTexts() {
+    //TODO: This placeholder should be replaced with an API call
+    return ["fairy-tales", "nutrition", "everything"];
+  }
+
   render() {
     return (
       <section>
-          <PantheonForm onSubmit={this.insertPlaceholder}/>
+          <PantheonForm
+            handleSubmit={this.handleSubmit}
+            sourcesOfNames={this.sourcesOfNames()}
+            sourcesOfTexts={this.sourcesOfTexts()}
+          />
           <Pantheon gods={this.state.gods}/>
       </section>
     )
