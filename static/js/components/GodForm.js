@@ -4,13 +4,13 @@ export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: "",
+      chromosomes: "XX",
       gender: "",
       title: "Being",
       seedWordA: "...",
       seedWordB: "...",
       femaleGenderLabel: "female",
-      maleGenderLabel: "male"
+      maleGenderLabel: "male (trans)"
     }
 
     this.setGenderLabel = this.setGenderLabel.bind(this);
