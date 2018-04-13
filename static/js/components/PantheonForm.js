@@ -34,40 +34,20 @@ export default class PantheonForm extends React.Component {
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
-          <h4 className="title">Seed Words</h4>
+          <h4 className="title">Parents of Creation</h4>
           <div className="row">
             <div className="form-group col-md-6">
-              <label>1st God of Creation:</label>
-              <input type="text" className="form-control" placeholder="milk" />
-              <input type="text" className="form-control" placeholder="honey" />
-              <select className="form-control pantheon-form-select" id="chromosomes" value="">
-                <option value="XX">XX chromosomes</option>
-                <option value="XY">XY chromosomes</option>
-              </select>
-              <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-                <option value="nb">non-binary</option>
-                <option value="f">female</option>
-                <option value="m">male</option>
-              </select>
+              <label>1st God of Creation</label>
+              <GodForm />
             </div>
             <div className="form-group col-md-6">
-              <label>2nd God of Creation:</label>
-              <input type="text" className="form-control" placeholder="milk" />
-              <input type="text" className="form-control" placeholder="honey" />
-              <select className="form-control pantheon-form-select" id="chromosomes" value="">
-                <option value="XX">XX chromosomes</option>
-                <option value="XY">XY chromosomes</option>
-              </select>
-              <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-                <option value="nb">non-binary</option>
-                <option value="f">female</option>
-                <option value="m">male</option>
-              </select>
+              <label>2nd God of Creation</label>
+              <GodForm />
             </div>
           </div>
 
           <h4 className="title">Sources</h4>
-          <div class="row">
+          <div className="row">
             <div className="form-group col-md-6">
               <select className="form-control pantheon-form-select" placeholder="names" id="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
                 {this.props.sourcesOfNames.map((namesSource,i) => (

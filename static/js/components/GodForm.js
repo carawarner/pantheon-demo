@@ -6,24 +6,47 @@ export default class GodForm extends React.Component {
     this.state = {
       chromosomes: "",
       gender: "",
+      title: "Being",
+      seedWordA: "...",
+      seedWordB: "...",
       femaleGenderLabel: "female",
       maleGenderLabel: "male"
     }
 
+    this.setGenderLabel = this.setGenderLabel.bind(this);
+    this.setTitle = this.setTitle.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  setGenderLabel(chromosomes) {
+    console.log("Update gender label");
+    if (chromosomes === "XX") {
+      this.setState({femaleGenderLabel : "female"})
+      this.setState({maleGenderLabel : "male (trans)"});
+    } else if (chromosomes== "XY") {
+      this.setState({maleGenderLabel : "male"});
+      this.setState({femaleGenderLabel : "female (trans)"})
+    }
+  }
+
+  setTitle(gender) {
+    const genderTitleMap = {
+      "f": "Goddess",
+      "m": "God",
+      "nb": "Divine Being"
+    }
+
+    this.setState({title: genderTitleMap[gender]});
   }
 
   handleChange(e) {
     const target = e.target;
 
     if (target.id === "chromosomes") {
-      if (target.value == "XX") {
-        this.setState({femaleGenderLabel : "female"})
-        this.setState({maleGenderLabel : "male (trans)"});
-      } else if (target.value == "XY") {
-        this.setState({maleGenderLabel : "male"});
-        this.setState({femaleGenderLabel : "female (trans)"})
-      }
+      this.setGenderLabel(target.value);
+    }
+    if (target.id === "gender") {
+      this.setTitle(target.value);
     }
 
     console.log(`Setting ${target.id}: ${target.value}`);
@@ -40,31 +63,27 @@ export default class GodForm extends React.Component {
      *
      * Making it possible to render GodForm on its own is why I let it manage its
      * own state...so the fact it cannot be rendered on its own is problematic.
+     *
+     * TODO: make form field required...
      */
     return (
       <div>
-        <div className="form-group">
-          <label for="chromosomes">Chromosomes:</label>
-          <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
-            <option value="XX">XX</option>
-            <option value="XY">XY</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <label for="gender">Gender:</label>
-          <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-            <option value="nb">non-binary</option>
-            <option value="f">{this.state.femaleGenderLabel}</option>
-            <option value="m">{this.state.maleGenderLabel}</option>
-          </select>
-        </div>
-        <div className="row">
-          <div className="form-group">
-            <input type="text" className="form-control" id="seedWordA" placeholder="milk" />
-            <input type="text" className="form-control" id="seedWordB" placeholder="honey" />
-          </div>
-        </div>
+        <p>{this.state.title} of {this.state.seedWordA} and {this.state.seedWordB}</p>
+        <input type="text" className="form-control" placeholder="milk" id="seedWordA" onChange={this.handleChange}/>
+        <input type="text" className="form-control" placeholder="honey" id="seedWordB" onChange={this.handleChange}/>
+
+        <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
+          <option value="XX">XX chromosomes</option>
+          <option value="XY">XY chromosomes</option>
+        </select>
+
+        <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
+          <option value="" disabled>gender</option>
+          <option value="nb">non-binary</option>
+          <option value="f">{this.state.femaleGenderLabel}</option>
+          <option value="m">{this.state.maleGenderLabel}</option>
+        </select>
       </div>
-    )
+    );
   }
 }
