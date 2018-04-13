@@ -75,8 +75,8 @@ export default class GodForm extends React.Component {
     return (
       <div>
         <p>{this.state.title} of {this.state.seedWordA} and {this.state.seedWordB}</p>
-        <input type="text" className="form-control" placeholder="milk" id="seedWordA" onChange={this.handleChange}/>
-        <input type="text" className="form-control" placeholder="honey" id="seedWordB" onChange={this.handleChange}/>
+        <input type="text" className="form-control" placeholder="..." id="seedWordA" onChange={this.handleChange}/>
+        <input type="text" className="form-control" placeholder="..." id="seedWordB" onChange={this.handleChange}/>
 
         <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
           <option value={XX}>XX chromosomes</option>
