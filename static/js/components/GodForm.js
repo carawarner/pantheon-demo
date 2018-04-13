@@ -1,10 +1,23 @@
 import React from "react";
 
+const femaleGender = "female";
+const maleGender = "male";
+const nonBinaryGender = "non-binary";
+const XX = "XX";
+const XY = "XY";
+
+const genderTitleMap = {
+  [femaleGender]: "Goddess",
+  [maleGender]: "God",
+  [nonBinaryGender]: "Divine Being"
+}
+
 export default class GodForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: "XX",
+      chromosomes: XX,
       gender: "",
       title: "Being",
       seedWordA: "...",
@@ -19,23 +32,16 @@ export default class GodForm extends React.Component {
   }
 
   setGenderLabel(chromosomes) {
-    console.log("Update gender label");
-    if (chromosomes === "XX") {
+    if (chromosomes === XX) {
       this.setState({femaleGenderLabel : "female"})
       this.setState({maleGenderLabel : "male (trans)"});
-    } else if (chromosomes== "XY") {
+    } else if (chromosomes === XY) {
       this.setState({maleGenderLabel : "male"});
       this.setState({femaleGenderLabel : "female (trans)"})
     }
   }
 
   setTitle(gender) {
-    const genderTitleMap = {
-      "f": "Goddess",
-      "m": "God",
-      "nb": "Divine Being"
-    }
-
     this.setState({title: genderTitleMap[gender]});
   }
 
@@ -73,15 +79,15 @@ export default class GodForm extends React.Component {
         <input type="text" className="form-control" placeholder="honey" id="seedWordB" onChange={this.handleChange}/>
 
         <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
-          <option value="XX">XX chromosomes</option>
-          <option value="XY">XY chromosomes</option>
+          <option value={XX}>XX chromosomes</option>
+          <option value={XX}>XY chromosomes</option>
         </select>
 
         <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-          <option value="" disabled>gender</option>
-          <option value="nb">non-binary</option>
-          <option value="f">{this.state.femaleGenderLabel}</option>
-          <option value="m">{this.state.maleGenderLabel}</option>
+          <option value="" disabled>select gender</option>
+          <option value={femaleGender}>{this.state.femaleGenderLabel}</option>
+          <option value={maleGender}>{this.state.maleGenderLabel}</option>
+          <option value={nonBinaryGender}>non-binary</option>
         </select>
       </div>
     );
