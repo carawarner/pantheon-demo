@@ -40,11 +40,29 @@ export default class PantheonForm extends React.Component {
               <label>1st God of Creation:</label>
               <input type="text" className="form-control" placeholder="milk" />
               <input type="text" className="form-control" placeholder="honey" />
+              <select className="form-control pantheon-form-select" id="chromosomes" value="">
+                <option value="XX">XX chromosomes</option>
+                <option value="XY">XY chromosomes</option>
+              </select>
+              <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
+                <option value="nb">non-binary</option>
+                <option value="f">female</option>
+                <option value="m">male</option>
+              </select>
             </div>
             <div className="form-group col-md-6">
               <label>2nd God of Creation:</label>
               <input type="text" className="form-control" placeholder="milk" />
               <input type="text" className="form-control" placeholder="honey" />
+              <select className="form-control pantheon-form-select" id="chromosomes" value="">
+                <option value="XX">XX chromosomes</option>
+                <option value="XY">XY chromosomes</option>
+              </select>
+              <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
+                <option value="nb">non-binary</option>
+                <option value="f">female</option>
+                <option value="m">male</option>
+              </select>
             </div>
           </div>
 
