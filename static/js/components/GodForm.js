@@ -43,22 +43,20 @@ export default class GodForm extends React.Component {
      */
     return (
       <div>
-        <div class="row">
-          <div className="form-group col-md-6">
-            <label for="chromosomes">Chromosomes:</label>
-            <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
-              <option value="XX">XX</option>
-              <option value="XY">XY</option>
-            </select>
-          </div>
-          <div className="form-group col-md-6">
-            <label for="gender">Gender:</label>
-            <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-              <option value="nb">non-binary</option>
-              <option value="f">{this.state.femaleGenderLabel}</option>
-              <option value="m">{this.state.maleGenderLabel}</option>
-            </select>
-          </div>
+        <div className="form-group">
+          <label for="chromosomes">Chromosomes:</label>
+          <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
+            <option value="XX">XX</option>
+            <option value="XY">XY</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label for="gender">Gender:</label>
+          <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
+            <option value="nb">non-binary</option>
+            <option value="f">{this.state.femaleGenderLabel}</option>
+            <option value="m">{this.state.maleGenderLabel}</option>
+          </select>
         </div>
         <div className="row">
           <div className="form-group">

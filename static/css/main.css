@@ -9383,5 +9383,8 @@ body {
     color: #fdbf47;
     text-decoration: underline; }
 
+.pantheon-form-select {
+  min-width: 120px; }
+
 .god-name {
   font-weight: 600; }

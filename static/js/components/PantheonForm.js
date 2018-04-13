@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import GodForm from "./GodForm";
 
 export default class PantheonForm extends React.Component {
   constructor(props) {
@@ -15,10 +16,10 @@ export default class PantheonForm extends React.Component {
 
   handleChange(e) {
     let target = e.target;
-    console.log(`User selected ${target.name}: ${target.value}`);
+    console.log(`User selected ${target.id}: ${target.value}`);
     this.setState(
       {
-        [target.name]: target.value
+        [target.id]: target.value
       }
     )
   }
@@ -32,28 +33,38 @@ export default class PantheonForm extends React.Component {
   render() {
     return (
       <div>
-        <h3 className="title">Parameters</h3>
         <form className="form" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>
-              Source of names:
-              <select className="form-control" name="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
-                {this.props.sourcesOfNames.map((namesSource,i) => (
-                  <option value={namesSource} key={"namesSource"+i}>{namesSource}</option>
-                ))}
-              </select>
-            </label>
+          <h4 className="title">Seed Words</h4>
+          <div className="row">
+            <div className="form-group col-md-6">
+              <label>1st God of Creation:</label>
+              <input type="text" className="form-control" placeholder="milk" />
+              <input type="text" className="form-control" placeholder="honey" />
+            </div>
+            <div className="form-group col-md-6">
+              <label>2nd God of Creation:</label>
+              <input type="text" className="form-control" placeholder="milk" />
+              <input type="text" className="form-control" placeholder="honey" />
+            </div>
           </div>
 
-          <div className="form-group">
-            <label>
-              Source of texts:
-              <select className="form-control" name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
-                {this.props.sourcesOfTexts.map((textsSource,i) => (
-                  <option value={textsSource} key={"textsSource"+i}>{textsSource}</option>
+          <h4 className="title">Sources</h4>
+          <div class="row">
+            <div className="form-group col-md-6">
+              <select className="form-control pantheon-form-select" placeholder="names" id="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
+                {this.props.sourcesOfNames.map((namesSource,i) => (
+                  <option value={namesSource} key={"namesSource"+i}>{namesSource} names</option>
                 ))}
               </select>
-            </label>
+            </div>
+
+            <div className="form-group col-md-6">
+              <select className="form-control pantheon-form-select" name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
+                {this.props.sourcesOfTexts.map((textsSource,i) => (
+                  <option value={textsSource} key={"textsSource"+i}>books about {textsSource}</option>
+                ))}
+              </select>
+            </div>
           </div>
 
           <div className="form-group">
