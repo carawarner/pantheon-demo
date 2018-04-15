@@ -1,11 +1,10 @@
 import React from "react";
 
+const XX = "XX";
+const XY = "XY";
 const femaleGender = "female";
 const maleGender = "male";
 const nonBinaryGender = "non-binary";
-const XX = "XX";
-const XY = "XY";
-
 const genderTitleMap = {
   [femaleGender]: "Goddess",
   [maleGender]: "God",
