@@ -38,7 +38,7 @@ export default class PantheonForm extends React.Component {
           <div className="row">
             <div className="form-group col-md-6">
               <label>1st God of Creation</label>
-              <GodForm />
+              <GodForm onChange={(update) => {this.setState({form1: update})}} />
             </div>
             <div className="form-group col-md-6">
               <label>2nd God of Creation</label>
