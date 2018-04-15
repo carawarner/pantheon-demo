@@ -19,41 +19,15 @@ export default class GodForm extends React.Component {
     this.state = {
       chromosomes: XX,
       gender: "",
-      title: "Being",
       seedWordA: "...",
-      seedWordB: "...",
-      femaleGenderLabel: "female",
-      maleGenderLabel: "male (trans)"
+      seedWordB: "..."
     }
 
-    this.setGenderLabel = this.setGenderLabel.bind(this);
-    this.setTitle = this.setTitle.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  setGenderLabel(chromosomes) {
-    if (chromosomes === XX) {
-      this.setState({femaleGenderLabel : "female"})
-      this.setState({maleGenderLabel : "male (trans)"});
-    } else if (chromosomes === XY) {
-      this.setState({maleGenderLabel : "male"});
-      this.setState({femaleGenderLabel : "female (trans)"})
-    }
-  }
-
-  setTitle(gender) {
-    this.setState({title: genderTitleMap[gender]});
   }
 
   handleChange(e) {
     const target = e.target;
-
-    if (target.id === "chromosomes") {
-      this.setGenderLabel(target.value);
-    }
-    if (target.id === "gender") {
-      this.setTitle(target.value);
-    }
 
     console.log(`Setting ${target.id}: ${target.value}`);
     this.setState({
@@ -72,9 +46,11 @@ export default class GodForm extends React.Component {
      *
      * TODO: make form field required...
      */
+    const godTitle = genderTitleMap[this.state.gender] || "Being";
+
     return (
       <div>
-        <p>The {this.state.title} of {this.state.seedWordA} and {this.state.seedWordB}</p>
+        <p>The {godTitle} of {this.state.seedWordA} and {this.state.seedWordB}</p>
         <input type="text" className="form-control" placeholder="..." id="seedWordA" onChange={this.handleChange}/>
         <input type="text" className="form-control" placeholder="..." id="seedWordB" onChange={this.handleChange}/>
 
@@ -85,8 +61,8 @@ export default class GodForm extends React.Component {
 
         <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
           <option value="" disabled>select gender</option>
-          <option value={femaleGender}>{this.state.femaleGenderLabel}</option>
-          <option value={maleGender}>{this.state.maleGenderLabel}</option>
+          <option value={femaleGender}>{this.state.chromosomes === "XX" ? "female" : "female (trans)"}</option>
+          <option value={maleGender}>{this.state.chromosomes === "XY" ? "male" : "male (trans)"}</option>
           <option value={nonBinaryGender}>non-binary</option>
         </select>
       </div>
