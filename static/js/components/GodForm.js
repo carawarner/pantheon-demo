@@ -80,7 +80,7 @@ export default class GodForm extends React.Component {
 
         <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
           <option value={XX}>XX chromosomes</option>
-          <option value={XX}>XY chromosomes</option>
+          <option value={XY}>XY chromosomes</option>
         </select>
 
         <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
