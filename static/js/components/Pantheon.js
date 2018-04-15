@@ -6,15 +6,15 @@ export const Pantheon = function(props) {
   return (
     <div>
       <h3 className="title">Results</h3>
-      {props.gods.map((god,i) => (
-        <div key={'god' + i}>
-          <God god={god}/>
+      {props.gods.map((god, i) => (
+        <div key={"god" + i}>
+          <God god={god} />
         </div>
       ))}
     </div>
   );
-}
+};
 
 Pantheon.propTypes = {
   gods: PropTypes.array.isRequired
-}
+};

@@ -16,11 +16,9 @@ export default class PantheonForm extends React.Component {
   handleChange(e) {
     let target = e.target;
     console.log(`User selected ${target.name}: ${target.value}`);
-    this.setState(
-      {
-        [target.name]: target.value
-      }
-    )
+    this.setState({
+      [target.name]: target.value
+    });
   }
 
   handleSubmit(e) {
@@ -37,9 +35,16 @@ export default class PantheonForm extends React.Component {
           <div className="form-group">
             <label>
               Source of names:
-              <select className="form-control" name="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
-                {this.props.sourcesOfNames.map((namesSource,i) => (
-                  <option value={namesSource} key={"namesSource"+i}>{namesSource}</option>
+              <select
+                className="form-control"
+                name="namesSource"
+                value={this.state.namesSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfNames.map((namesSource, i) => (
+                  <option value={namesSource} key={"namesSource" + i}>
+                    {namesSource}
+                  </option>
                 ))}
               </select>
             </label>
@@ -48,16 +53,23 @@ export default class PantheonForm extends React.Component {
           <div className="form-group">
             <label>
               Source of texts:
-              <select className="form-control" name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
-                {this.props.sourcesOfTexts.map((textsSource,i) => (
-                  <option value={textsSource} key={"textsSource"+i}>{textsSource}</option>
+              <select
+                className="form-control"
+                name="textsSource"
+                value={this.state.textsSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfTexts.map((textsSource, i) => (
+                  <option value={textsSource} key={"textsSource" + i}>
+                    {textsSource}
+                  </option>
                 ))}
               </select>
             </label>
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Generate" className="btn"/>
+            <input type="submit" value="Generate" className="btn" />
           </div>
         </form>
       </div>
@@ -68,4 +80,4 @@ export default class PantheonForm extends React.Component {
 PantheonForm.propTypes = {
   sourcesOfNames: PropTypes.array.isRequired,
   sourcesOfTexts: PropTypes.array.isRequired
-}
+};
