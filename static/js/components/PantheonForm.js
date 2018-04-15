@@ -16,12 +16,10 @@ export default class PantheonForm extends React.Component {
 
   handleChange(e) {
     let target = e.target;
-    console.log(`User selected ${target.id}: ${target.value}`);
-    this.setState(
-      {
-        [target.id]: target.value
-      }
-    )
+    console.log(`User selected ${target.name}: ${target.value}`);
+    this.setState({
+      [target.name]: target.value
+    });
   }
 
   handleSubmit(e) {
@@ -38,7 +36,11 @@ export default class PantheonForm extends React.Component {
           <div className="row">
             <div className="form-group col-md-6">
               <label>1st God of Creation</label>
-              <GodForm onChange={(update) => {this.setState({form1: update})}} />
+              <GodForm
+                onChange={update => {
+                  this.setState({ form1: update });
+                }}
+              />
             </div>
             <div className="form-group col-md-6">
               <label>2nd God of Creation</label>
@@ -49,24 +51,39 @@ export default class PantheonForm extends React.Component {
           <h4 className="title">Sources</h4>
           <div className="row">
             <div className="form-group col-md-6">
-              <select className="form-control pantheon-form-select" placeholder="names" id="namesSource" value={this.state.namesSource} onChange={this.handleChange}>
-                {this.props.sourcesOfNames.map((namesSource,i) => (
-                  <option value={namesSource} key={"namesSource"+i}>{namesSource} names</option>
+              <select
+                className="form-control pantheon-form-select"
+                placeholder="names"
+                id="namesSource"
+                value={this.state.namesSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfNames.map((namesSource, i) => (
+                  <option value={namesSource} key={"namesSource" + i}>
+                    {namesSource} names
+                  </option>
                 ))}
               </select>
             </div>
 
             <div className="form-group col-md-6">
-              <select className="form-control pantheon-form-select" name="textsSource" value={this.state.textsSource} onChange={this.handleChange}>
-                {this.props.sourcesOfTexts.map((textsSource,i) => (
-                  <option value={textsSource} key={"textsSource"+i}>books about {textsSource}</option>
+              <select
+                className="form-control pantheon-form-select"
+                name="textsSource"
+                value={this.state.textsSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfTexts.map((textsSource, i) => (
+                  <option value={textsSource} key={"textsSource" + i}>
+                    books about {textsSource}
+                  </option>
                 ))}
               </select>
             </div>
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Generate" className="btn"/>
+            <input type="submit" value="Generate" className="btn" />
           </div>
         </form>
       </div>
@@ -77,4 +94,4 @@ export default class PantheonForm extends React.Component {
 PantheonForm.propTypes = {
   sourcesOfNames: PropTypes.array.isRequired,
   sourcesOfTexts: PropTypes.array.isRequired
-}
+};
