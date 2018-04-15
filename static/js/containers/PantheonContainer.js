@@ -2,11 +2,10 @@ import React from "react";
 import { Pantheon } from "../components/Pantheon";
 import PantheonForm from "../components/PantheonForm";
 
-
 export default class PantheonContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { gods: [] }
+    this.state = { gods: [] };
     this.fetchPantheon = this.fetchPantheon.bind(this);
   }
 
@@ -32,7 +31,7 @@ export default class PantheonContainer extends React.Component {
 
   fetchSourcesOfNames(options) {
     //TODO: This placeholder should be replaced with an API call
-    return ["norwegian", "french", "german"]
+    return ["norwegian", "french", "german"];
   }
 
   fetchSourcesOfTexts() {
@@ -51,10 +50,10 @@ export default class PantheonContainer extends React.Component {
           />
         </section>
         <section className="has-top-divider">
-          <Pantheon gods={this.state.gods}/>
+          <Pantheon gods={this.state.gods} />
         </section>
       </div>
-    )
+    );
   }
 }
 
@@ -71,7 +70,7 @@ const pantheonA = [
     name: "Valter",
     epithet: "Demi-God of Calamities"
   }
-]
+];
 
 const pantheonB = [
   {
@@ -82,4 +81,4 @@ const pantheonB = [
     name: "Eindride",
     epithet: "Demi-God of folklorists"
   }
-]
+];
