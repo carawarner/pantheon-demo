@@ -71,6 +71,7 @@ export default class PantheonForm extends React.Component {
             <div className="pantheon-form-row">
               <p className="description">1st God of Creation</p>
               <GodForm
+                defaultChromosomes={GodForm.XX}
                 onChange={update => {
                   this.setState({ godA: update });
                 }}
@@ -79,6 +80,7 @@ export default class PantheonForm extends React.Component {
             <div className="pantheon-form-row">
               <p className="description">2nd God of Creation</p>
               <GodForm
+                defaultChromosomes={GodForm.XY}
                 onChange={update => {
                   this.setState({ godB: update });
                 }}

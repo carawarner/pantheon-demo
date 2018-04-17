@@ -16,13 +16,20 @@ export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: XX,
+      chromosomes: this.props.defaultChromosomes || XX,
       gender: "",
       seedWordA: "",
       seedWordB: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  static get XX() {
+    return XX;
+  }
+  static get XY() {
+    return XY;
   }
 
   handleChange(e) {
