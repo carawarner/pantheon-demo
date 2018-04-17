@@ -27,6 +27,8 @@ export default class PantheonContainer extends React.Component {
         gods: pantheonA
       });
     }
+    console.log(options);
+    const { namesSource, textsSource, godA, godB } = options;
   }
 
   fetchSourcesOfNames(options) {

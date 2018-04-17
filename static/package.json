@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "material-kit": "^2.0.2",
-    "node-sass": "^4.8.3"
+    "node-sass": "^4.8.3",
+    "voca": "^1.4.0"
   }
 }
