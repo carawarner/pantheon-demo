@@ -1,4 +1,5 @@
 import React from "react";
+import {titleCase} from "voca";
 
 const XX = "XX";
 const XY = "XY";
@@ -9,10 +10,9 @@ const genderTitleMap = {
   [femaleGender]: "Goddess",
   [maleGender]: "God",
   [nonBinaryGender]: "Divine Being"
-}
+};
 
 export default class GodForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ export default class GodForm extends React.Component {
       gender: "",
       seedWordA: "",
       seedWordB: ""
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -31,29 +31,63 @@ export default class GodForm extends React.Component {
     console.log(`Setting ${target.id}: ${target.value}`);
     this.setState({
       [target.id]: target.value
-    })
-    const newState = Object.assign(this.state, {[target.id]: target.value})
-    this.props.onChange(newState)
+    });
+    const newState = Object.assign(this.state, { [target.id]: target.value });
+    this.props.onChange(newState);
   }
 
   render() {
     const godTitle = genderTitleMap[this.state.gender] || "Being";
+    const domainA = titleCase(this.state.seedWordA);
+    const domainB =
+      this.state.seedWordB.slice(0, 1).toUpperCase() +
+      this.state.seedWordB.slice(1);
 
     return (
       <div>
-        <p>The {godTitle} of {this.state.seedWordA} and {this.state.seedWordB}</p>
-        <input type="text" className="form-control" placeholder={this.state.seedWordA || "..."} id="seedWordA" onChange={this.handleChange}/>
-        <input type="text" className="form-control" placeholder={this.state.seedWordB || "..."} id="seedWordB" onChange={this.handleChange}/>
+        <p>
+          The {godTitle} of {domainA} and {domainB}
+        </p>
+        <input
+          type="text"
+          className="form-control"
+          placeholder={this.state.seedWordA || "..."}
+          id="seedWordA"
+          onChange={this.handleChange}
+        />
+        <input
+          type="text"
+          className="form-control"
+          placeholder={this.state.seedWordB || "..."}
+          id="seedWordB"
+          onChange={this.handleChange}
+        />
 
-        <select className="form-control pantheon-form-select" id="chromosomes" value={this.state.chromosomes} onChange={this.handleChange}>
+        <select
+          className="form-control pantheon-form-select"
+          id="chromosomes"
+          value={this.state.chromosomes}
+          onChange={this.handleChange}
+        >
           <option value={XX}>XX (egg donor)</option>
           <option value={XY}>XY (sperm donor)</option>
         </select>
 
-        <select className="form-control pantheon-form-select" id="gender" value={this.state.gender} onChange={this.handleChange}>
-          <option value="" disabled>select gender</option>
-          <option value={femaleGender}>{this.state.chromosomes === "XX" ? "female" : "female (trans)"}</option>
-          <option value={maleGender}>{this.state.chromosomes === "XY" ? "male" : "male (trans)"}</option>
+        <select
+          className="form-control pantheon-form-select"
+          id="gender"
+          value={this.state.gender}
+          onChange={this.handleChange}
+        >
+          <option value="" disabled>
+            select gender
+          </option>
+          <option value={femaleGender}>
+            {this.state.chromosomes === "XX" ? "female" : "female (trans)"}
+          </option>
+          <option value={maleGender}>
+            {this.state.chromosomes === "XY" ? "male" : "male (trans)"}
+          </option>
           <option value={nonBinaryGender}>non-binary</option>
         </select>
       </div>
