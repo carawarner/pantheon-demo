@@ -1,13 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import GodForm from "./GodForm";
+import { getRandomIndex } from "../utilities";
 
 export default class PantheonForm extends React.Component {
   constructor(props) {
     super(props);
+    const randNames = getRandomIndex(this.props.sourcesOfNames);
+    const randTexts = getRandomIndex(this.props.sourcesOfTexts);
+
     this.state = {
-      namesSource: "",
-      textsSource: ""
+      namesSource: this.props.sourcesOfNames[randNames],
+      textsSource: this.props.sourcesOfTexts[randTexts],
+      godA: {},
+      godB: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,8 +30,7 @@ export default class PantheonForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const options = {};
-    this.props.fetchPantheon(options);
+    this.props.fetchPantheon(this.state);
   }
 
   render() {
@@ -38,13 +43,17 @@ export default class PantheonForm extends React.Component {
               <label>1st God of Creation</label>
               <GodForm
                 onChange={update => {
-                  this.setState({ form1: update });
+                  this.setState({ godA: update });
                 }}
               />
             </div>
             <div className="form-group col-md-6">
               <label>2nd God of Creation</label>
-              <GodForm />
+              <GodForm
+                onChange={update => {
+                  this.setState({ godB: update });
+                }}
+              />
             </div>
           </div>
 
@@ -54,7 +63,7 @@ export default class PantheonForm extends React.Component {
               <select
                 className="form-control pantheon-form-select"
                 placeholder="names"
-                id="namesSource"
+                name="namesSource"
                 value={this.state.namesSource}
                 onChange={this.handleChange}
               >

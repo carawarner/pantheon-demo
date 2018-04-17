@@ -1,5 +1,5 @@
 import React from "react";
-import {titleCase} from "voca";
+import { titleCase } from "voca";
 
 const XX = "XX";
 const XY = "XY";
@@ -39,9 +39,7 @@ export default class GodForm extends React.Component {
   render() {
     const godTitle = genderTitleMap[this.state.gender] || "Being";
     const domainA = titleCase(this.state.seedWordA);
-    const domainB =
-      this.state.seedWordB.slice(0, 1).toUpperCase() +
-      this.state.seedWordB.slice(1);
+    const domainB = titleCase(this.state.seedWordB);
 
     return (
       <div>
