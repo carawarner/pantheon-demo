@@ -18,7 +18,7 @@ const ChromosomesSelector = props => (
     <select
       name="chromosomes"
       value={props.chromosomes}
-      onChange={props.handleChange}
+      onChange={props.onChange}
     >
       <option value={XX}>XX (egg donor)</option>
       <option value={XY}>XY (sperm donor)</option>
@@ -29,7 +29,7 @@ const ChromosomesSelector = props => (
 const GenderSelector = props => (
   <div className="pantheon-form-item">
     <label htmlFor="gender">Gender</label>
-    <select name="gender" value={props.gender} onChange={props.handleChange}>
+    <select name="gender" value={props.gender} onChange={props.onChange}>
       <option value="" disabled>
         Choose...
       </option>
@@ -51,7 +51,7 @@ const SeedWordInputter = props => (
       type="text"
       placeholder={props.placeholder || ""}
       name={props.name}
-      onChange={props.handleChange}
+      onChange={props.onChange}
     />
   </div>
 );
@@ -99,24 +99,24 @@ export default class GodForm extends React.Component {
         </p>
         <ChromosomesSelector
           chromosomes={this.state.chromosomes}
-          handleChange={this.handleChange}
+          onChange={this.handleChange}
         />
         <GenderSelector
           gender={this.state.gender}
           chromosomes={this.state.chromosomes}
-          handleChange={this.handleChange}
+          onChange={this.handleChange}
         />
         <SeedWordInputter
           name="seedWordA"
           label="Egg Word"
           placeholder={this.state.seedWordA}
-          handleChange={this.handleChange}
+          onChange={this.handleChange}
         />
         <SeedWordInputter
           name="seedWordB"
           label="Sperm Word"
           placeholder={this.state.seedWordB}
-          handleChange={this.handleChange}
+          onChange={this.handleChange}
         />
       </div>
     );
