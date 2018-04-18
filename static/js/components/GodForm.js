@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { titleCase } from "voca";
 
 const XX = "XX";
@@ -25,6 +26,10 @@ const ChromosomesSelector = props => (
     </select>
   </div>
 );
+ChromosomesSelector.propTypes = {
+  chromosomes: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 const GenderSelector = props => (
   <div className="pantheon-form-item">
@@ -43,24 +48,35 @@ const GenderSelector = props => (
     </select>
   </div>
 );
+GenderSelector.propTypes = {
+  gender: PropTypes.string.isRequired,
+  chromosomes: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 const SeedWordInputter = props => (
   <div className="pantheon-form-item">
     <label htmlFor={props.name}>{props.label}</label>
     <input
       type="text"
-      placeholder={props.placeholder || ""}
+      placeholder={props.seedWord || ""}
       name={props.name}
       onChange={props.onChange}
     />
   </div>
 );
+SeedWordInputter.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  seedWord: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: this.props.defaultChromosomes || XX,
+      chromosomes: this.props.chromosomes || XX,
       gender: "",
       seedWordA: "",
       seedWordB: ""
@@ -109,16 +125,21 @@ export default class GodForm extends React.Component {
         <SeedWordInputter
           name="seedWordA"
           label="A Domain (a word like Art)"
-          placeholder={this.state.seedWordA}
+          seedWord={this.state.seedWordA}
           onChange={this.handleChange}
         />
         <SeedWordInputter
           name="seedWordB"
           label="Another Domain (a word like Science)"
-          placeholder={this.state.seedWordB}
+          seedWord={this.state.seedWordB}
           onChange={this.handleChange}
         />
       </div>
     );
   }
 }
+
+GodForm.propTypes = {
+  chromosomes: PropTypes.string,
+  godID: PropTypes.string.isRequired
+};

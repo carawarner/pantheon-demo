@@ -20,6 +20,11 @@ const NamesSourceSelector = props => (
     </select>
   </div>
 );
+NamesSourceSelector.propTypes = {
+  namesSource: PropTypes.string.isRequired,
+  sourcesOfNames: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 const TextsSourceSelector = props => (
   <div className="pantheon-form-item">
@@ -37,17 +42,28 @@ const TextsSourceSelector = props => (
     </select>
   </div>
 );
+TextsSourceSelector.propTypes = {
+  textsSource: PropTypes.string.isRequired,
+  sourcesOfTexts: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 const GodOfCreationForm = props => (
   <div>
     <div className="pantheon-form-description">{props.description}</div>
     <GodForm
-      defaultChromosomes={props.defaultChromosomes}
+      chromosomes={props.chromosomes}
       godID={props.godID}
       onChange={props.onChange}
     />
   </div>
 );
+GodOfCreationForm.propTypes = {
+  description: PropTypes.string.isRequired,
+  chromosomes: PropTypes.string.isRequired,
+  godID: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default class PantheonForm extends React.Component {
   constructor(props) {
@@ -87,7 +103,7 @@ export default class PantheonForm extends React.Component {
       godA: this.state.godA,
       godB: this.state.godB
     };
-    this.props.fetchPantheon(options);
+    this.props.onSubmit(options);
   }
 
   render() {
@@ -97,13 +113,13 @@ export default class PantheonForm extends React.Component {
           <h4>Parents of Creation</h4>
 
           <GodOfCreationForm
-            defaultChromosomes={GodForm.XX}
+            chromosomes={GodForm.XX}
             onChange={this.updateGod}
             godID={"godA"}
             description={"1st God of Creation"}
           />
           <GodOfCreationForm
-            defaultChromosomes={GodForm.XY}
+            chromosomes={GodForm.XY}
             onChange={this.updateGod}
             godID={"godB"}
             description={"2nd God of Creation"}
@@ -132,5 +148,6 @@ export default class PantheonForm extends React.Component {
 
 PantheonForm.propTypes = {
   sourcesOfNames: PropTypes.array.isRequired,
-  sourcesOfTexts: PropTypes.array.isRequired
+  sourcesOfTexts: PropTypes.array.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
