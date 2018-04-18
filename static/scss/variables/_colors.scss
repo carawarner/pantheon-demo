@@ -1,22 +1,11 @@
 // Pallet
 
-$white: #fff;
-$black: #333;
-$main-color: #f4bc50; // casablanca
-$light-color: #f5f6f4; // "desert storm
-$light-accent-color: #9b9fa8; // "santas gray"
-$dark-color: #838198; // "waterloo"
-$dark-accent-color: #3c4858; // unknown
-$very-pale-gray: #aaaaaa;
+$white-color: #fff;
+$black-color: #333;
+$yellow-color: #f4bc50;
 
-// Global
-
-$background-color: $white;
-$text-color: $dark-accent-color;
-$heading-color: $main-color;
-$subheading-color: $dark-color;
-$description-color: $very-pale-gray;
-
-$link-color: $main-color;
-$link-hover-color: saturate($main-color, 10%);
-$link-visited-color: $main-color; // diff is distracting
+$lightest-gray-color: #f5f6f4;
+$light-gray-color: #aaaaaa;
+$medium-gray-color: #9b9fa8;
+$dark-gray-color: #838198;
+$darkest-gray-color: #3c4858;

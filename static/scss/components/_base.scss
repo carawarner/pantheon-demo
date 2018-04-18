@@ -4,10 +4,11 @@
  * My base styles
  */
 
-body { @extend %base-text }
 body {
-  background-color: $background-color;
-  color: $text-color;
+  @extend %base-text;
+}
+body {
+  background-color: $white-color;
   padding: 30px;
 }
 
@@ -18,6 +19,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.text-is-centered{
+.text-is-centered {
   text-align: center;
 }

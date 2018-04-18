@@ -1,12 +1,17 @@
 .pantheon-form {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  button {
+    @extend .pantheon-button;
+    margin-top: 30px;
+  }
 }
 .pantheon-form-row {
   margin-top: 30px;
-  .section-heading {
-
-  }
   .description {
-    color: $very-pale-gray;
+    color: $light-gray-color;
   }
 }
 
@@ -19,7 +24,7 @@
     height: 36px;
     outline: none;
     border: none;
-    border-bottom: 1px solid $very-pale-gray;
+    border-bottom: 1px solid $light-gray-color;
   }
   select {
     border-radius: 0px;

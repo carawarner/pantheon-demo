@@ -1,5 +1,5 @@
 %base-text {
-  color: $black;
+  color: $darkest-gray-color;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -7,7 +7,7 @@
 }
 
 %heading-text {
-  color: $dark-accent-color;
+  color: $darkest-gray-color;
   font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 700;
   font-size: 14px;
@@ -29,17 +29,17 @@
 .unordered-list { list-style-type: disc; }
 .ordered-list { list-style: decimal; }
 .link {
-  color: $link-color;
+  color: $yellow-color;
   font-weight: 600;
   text-decoration: none;
 
   &:visited {
-    color: $link-visited-color;
+    color: $yellow-color;
   }
 
   &:hover,
   &:visited:hover {
-    color: $link-hover-color;
+    color: saturate($yellow-color, 10%);
     text-decoration: underline;
   }
 }
@@ -64,7 +64,7 @@
 
   label {
     margin-top: 20px;
-    color: $description-color;
+    color: $light-gray-color;
   }
 
   input, textarea, select { @extend %base-text }
