@@ -13,11 +13,9 @@ npm run watch
 ```
 Visit `file:///<...>/static/index.html` in a web browser.
 
-## Raison D'etre
+# Stack
 
-I wrote this demo because it was fun, but also to use the following technologies:
-
-### Application
+**Application**
 - [ ] Flask - for a "restish" API that talks JSON with the client-side app
 - [x] React - componentization of frontend elements
 - [ ] Redux - client-side state management
@@ -27,13 +25,13 @@ I wrote this demo because it was fun, but also to use the following technologies
 - [x] Babel - to transpile ES6 for broader compatibility
 - [x] webpack - minification
 
-### Deployment & Routing
+**Deployment & Routing**
 - [ ] nginx - a reverse http proxy for the Flask microservices, static files, and webpack bundles
 - [ ] docker - to deploy different pieces
 - [ ] docker-compose - for development
 - [ ] puppet - for production
 
-### Test Automation
+**Test Automation**
 - [ ] Karma - to run tests
 - [ ] mocha - a browser in which to run tests
 - [ ] enzyme - a testing framework for React
