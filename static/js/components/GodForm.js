@@ -31,7 +31,7 @@ const GenderSelector = props => (
     <label htmlFor="gender">Gender</label>
     <select name="gender" value={props.gender} onChange={props.onChange}>
       <option value="" disabled>
-        Choose...
+        choose...
       </option>
       <option value={femaleGender}>
         {props.chromosomes === "XX" ? "female" : "female (trans)"}
@@ -108,13 +108,13 @@ export default class GodForm extends React.Component {
         />
         <SeedWordInputter
           name="seedWordA"
-          label="Egg Word"
+          label="A Domain (a word like Art)"
           placeholder={this.state.seedWordA}
           onChange={this.handleChange}
         />
         <SeedWordInputter
           name="seedWordB"
-          label="Sperm Word"
+          label="Another Domain (a word like Science)"
           placeholder={this.state.seedWordB}
           onChange={this.handleChange}
         />
