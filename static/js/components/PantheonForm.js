@@ -67,33 +67,12 @@ export default class PantheonForm extends React.Component {
     this.updateGod = this.updateGod.bind(this);
   }
 
-  validateForm() {
-    let formIsValid = true;
-    const { namesSource, textsSource, godA, godB } = this.state;
-
-    if (godA.chromosomes === godB.chromosomes) {
-      alert("Pantheon requires an egg donor and a sperm donor.");
-      formIsValid = false;
-    }
-    if (
-      !godA.seedWordA ||
-      !godA.seedWordB ||
-      !godB.seedWordA ||
-      !godB.seedWordB
-    ) {
-      alert("One or more seed words is empty");
-    }
-
-    return formIsValid;
-  }
-
   updateGod(godKey, update) {
     this.setState({ [godKey]: update });
   }
 
   handleChange(e) {
     let target = e.target;
-    console.log(`User selected ${target.name}: ${target.value}`);
     this.setState({
       [target.name]: target.value
     });
@@ -101,11 +80,6 @@ export default class PantheonForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    if (!this.validateForm()) {
-      alert("There are errors.");
-      return;
-    }
 
     const options = {
       namesSource: this.state.namesSource,
