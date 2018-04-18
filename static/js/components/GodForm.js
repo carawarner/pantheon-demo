@@ -35,9 +35,9 @@ export default class GodForm extends React.Component {
   handleChange(e) {
     const target = e.target;
 
-    console.log(`Setting ${target.id}: ${target.value}`);
+    console.log(`Setting ${target.name}: ${target.value}`);
     this.setState({
-      [target.id]: target.value
+      [target.name]: target.value
     });
     const newState = Object.assign(this.state, { [target.id]: target.value });
     this.props.onChange(newState);
@@ -56,18 +56,18 @@ export default class GodForm extends React.Component {
         <input
           type="text"
           placeholder={this.state.seedWordA || "..."}
-          id="seedWordA"
+          name="seedWordA"
           onChange={this.handleChange}
         />
         <input
           type="text"
           placeholder={this.state.seedWordB || "..."}
-          id="seedWordB"
+          name="seedWordB"
           onChange={this.handleChange}
         />
 
         <select
-          id="chromosomes"
+          name="chromosomes"
           value={this.state.chromosomes}
           onChange={this.handleChange}
         >
@@ -76,7 +76,7 @@ export default class GodForm extends React.Component {
         </select>
 
         <select
-          id="gender"
+          name="gender"
           value={this.state.gender}
           onChange={this.handleChange}
         >
