@@ -37,49 +37,57 @@ export default class PantheonForm extends React.Component {
     return (
       <div className="text-is-centered">
         <form className="pantheon-form" onSubmit={this.handleSubmit}>
-          <h4>Parents of Creation</h4>
-          <label>1st God of Creation</label>
-          <GodForm
-            onChange={update => {
-              this.setState({ godA: update });
-            }}
-          />
-          <label>2nd God of Creation</label>
-          <GodForm
-            onChange={update => {
-              this.setState({ godB: update });
-            }}
-          />
-
-          <h4>Sources</h4>
-          <select
-            className="form-control pantheon-form-select"
-            placeholder="names"
-            name="namesSource"
-            value={this.state.namesSource}
-            onChange={this.handleChange}
-          >
-            {this.props.sourcesOfNames.map((namesSource, i) => (
-              <option value={namesSource} key={"namesSource" + i}>
-                {namesSource} names
-              </option>
-            ))}
-          </select>
-          <select
-            className="pantheon-form-select"
-            name="textsSource"
-            value={this.state.textsSource}
-            onChange={this.handleChange}
-          >
-            {this.props.sourcesOfTexts.map((textsSource, i) => (
-              <option value={textsSource} key={"textsSource" + i}>
-                books about {textsSource}
-              </option>
-            ))}
-          </select>
-
-          <div className="pantheon-form-button">
-            <input type="submit" value="Generate" className="btn" />
+          <div className="pantheon-form-section">
+            <h4>Parents of Creation</h4>
+            <div className="pantheon-form-row">
+              <p className="description">1st God of Creation</p>
+              <GodForm
+                onChange={update => {
+                  this.setState({ godA: update });
+                }}
+              />
+            </div>
+            <div className="pantheon-form-row">
+              <p className="description">2nd God of Creation</p>
+              <GodForm
+                onChange={update => {
+                  this.setState({ godB: update });
+                }}
+              />
+            </div>
+          </div>
+          <div className="pantheon-form-section">
+            <h4>Sources</h4>
+            <div className="pantheon-form-row">
+              <select
+                placeholder="names"
+                name="namesSource"
+                value={this.state.namesSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfNames.map((namesSource, i) => (
+                  <option value={namesSource} key={"namesSource" + i}>
+                    {namesSource} names
+                  </option>
+                ))}
+              </select>
+              <select
+                name="textsSource"
+                value={this.state.textsSource}
+                onChange={this.handleChange}
+              >
+                {this.props.sourcesOfTexts.map((textsSource, i) => (
+                  <option value={textsSource} key={"textsSource" + i}>
+                    books about {textsSource}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="pantheon-form-section">
+            <button>
+              <input type="submit" value="Generate" className="btn" />
+            </button>
           </div>
         </form>
       </div>

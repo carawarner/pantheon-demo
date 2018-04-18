@@ -43,26 +43,23 @@ export default class GodForm extends React.Component {
 
     return (
       <div className="god-form">
-        <div>
+        <p>
           The {godTitle} of {domainA} and {domainB}
-        </div>
+        </p>
         <input
           type="text"
-          className="god-form-input"
           placeholder={this.state.seedWordA || "..."}
           id="seedWordA"
           onChange={this.handleChange}
         />
         <input
           type="text"
-          className="god-form-input"
           placeholder={this.state.seedWordB || "..."}
           id="seedWordB"
           onChange={this.handleChange}
         />
 
         <select
-          className="god-form-select"
           id="chromosomes"
           value={this.state.chromosomes}
           onChange={this.handleChange}
@@ -72,7 +69,6 @@ export default class GodForm extends React.Component {
         </select>
 
         <select
-          className="god-form-select"
           id="gender"
           value={this.state.gender}
           onChange={this.handleChange}

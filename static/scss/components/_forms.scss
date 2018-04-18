@@ -1,10 +1,28 @@
 .pantheon-form {
 }
-.god-form {
+.pantheon-form-row {
+  margin-top: 30px;
+  .section-heading {
+
+  }
+  .description {
+    color: $very-pale-gray;
+  }
 }
-.god-form-preview {
-}
-.god-form-input {
-}
-.god-form-select {
+
+.god-form,
+.pantheon-form {
+  input,
+  select {
+    background-color: inherit;
+    width: 100%;
+    height: 36px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $very-pale-gray;
+  }
+  select {
+    border-radius: 0px;
+    -webkit-appearance: none;
+  }
 }

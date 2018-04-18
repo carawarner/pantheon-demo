@@ -3,8 +3,6 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  height: 24px;
-  line-height: 24px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -15,10 +13,6 @@
   font-size: 14px;
 }
 
-.description-text {
-  color: $description-color;
-}
-
 .italic { font-style: italic; }
 .bold   { font-weight: 700 }
 
@@ -26,11 +20,11 @@
 .h1 { font-size: 240%; }
 .h2 { font-size: 200%; }
 .h3 { font-size: 160%; }
-.h4 { font-size: 120%; }
+.h4 { font-size: 130%; }
 .h5 { font-size: 100%; }
 .h6 { font-size: 100%; }
 
-.block-margins { margin: .5em 0; }
+.block-margins { margin: 1em 0; }
 
 .unordered-list { list-style-type: disc; }
 .ordered-list { list-style: decimal; }
@@ -72,4 +66,6 @@
     margin-top: 20px;
     color: $description-color;
   }
+
+  input, textarea, select { @extend %base-text }
 }
