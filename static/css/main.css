@@ -58,19 +58,19 @@
   margin: 1em 0 0.5em; }
 
 .typography h2, .typography h2, .typography .h2 {
-  margin: 1.2em 0 0.5em; }
+  margin: 1.5em 0 0.5em; }
 
 .typography h3, .typography h3, .typography .h3 {
-  margin: 1.2em 0 0.5em; }
+  margin: 1.5em 0 0.5em; }
 
 .typography h4, .typography h4, .typography .h4 {
-  margin: 1.5em 0 0.5em; }
+  margin: 2em 0 0.5em; }
 
 .typography h5, .typography h5, .typography .h5 {
-  margin: 1.5em 0 0.5em; }
+  margin: 2em 0 0.5em; }
 
 .typography h6, .typography h6, .typography .h6 {
-  margin: 1.5em 0 0.5em; }
+  margin: 2em 0 0.5em; }
 
 .typography label {
   margin-top: 20px;
@@ -113,36 +113,50 @@ body {
 .pantheon-form {
   width: 100%;
   max-width: 400px;
+  min-width: 250px;
   margin-left: auto;
   margin-right: auto; }
   .pantheon-form button {
     margin-top: 30px; }
 
-.pantheon-form-row {
-  margin-top: 30px; }
+.pantheon-form-item {
+  display: block;
+  height: 45px;
+  position: relative;
+  margin-top: 20px; }
 
-.god-form p,
-.pantheon-form p {
-  color: #aaaaaa; }
+.pantheon-form-description {
+  color: #aaaaaa;
+  margin-top: 40px; }
 
 .god-form input,
 .god-form select,
 .pantheon-form input,
 .pantheon-form select {
   background-color: inherit;
+  border: none;
+  border-bottom: 1px solid #aaaaaa;
+  box-sizing: border-box;
   width: 100%;
   height: 36px;
   outline: none;
-  border: none;
-  border-bottom: 1px solid #aaaaaa; }
+  padding: 1px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px; }
 
 .god-form select,
 .pantheon-form select {
   border-radius: 0px;
   -webkit-appearance: none; }
 
-.pantheon-form p.god-form-preview {
-  color: #3c4858; }
+.god-form label,
+.pantheon-form label {
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px; }
 
 .god-name {
   font-weight: 600; }

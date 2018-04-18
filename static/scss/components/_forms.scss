@@ -1,6 +1,7 @@
 .pantheon-form {
   width: 100%;
   max-width: 400px;
+  min-width: 250px;
   margin-left: auto;
   margin-right: auto;
   button {
@@ -8,28 +9,41 @@
     margin-top: 30px;
   }
 }
-.pantheon-form-row {
-  margin-top: 30px;
+.pantheon-form-item {
+  display: block;
+  height: 45px;
+  position: relative;
+  margin-top: 20px;
+}
+.pantheon-form-description {
+  color: $light-gray-color;
+  margin-top: 40px;
 }
 .god-form,
 .pantheon-form {
-  p {
-    color: $light-gray-color;
-  }
   input,
   select {
     background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $light-gray-color;
+    box-sizing: border-box;
     width: 100%;
     height: 36px;
     outline: none;
-    border: none;
-    border-bottom: 1px solid $light-gray-color;
+    padding: 1px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
   }
   select {
     border-radius: 0px;
     -webkit-appearance: none;
   }
-}
-.pantheon-form p.god-form-preview {
-  color: $darkest-gray-color;
+  label {
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+  }
 }
