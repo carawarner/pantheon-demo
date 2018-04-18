@@ -45,8 +45,8 @@ export default class GodForm extends React.Component {
 
   render() {
     const godTitle = genderTitleMap[this.state.gender] || "Being";
-    const domainA = titleCase(this.state.seedWordA);
-    const domainB = titleCase(this.state.seedWordB);
+    const domainA = titleCase(this.state.seedWordA) || "...";
+    const domainB = titleCase(this.state.seedWordB) || "...";
 
     return (
       <div>
