@@ -1,29 +1,6 @@
-// Required
-@import "variables/all";
-@import "node_modules/material-kit/assets/scss/core/variables";
-@import "node_modules/material-kit/assets/scss/core/core-bootstrap";
-
-// Mixins
-@import "node_modules/material-kit/assets/scss/core/mixins/buttons";
-@import "node_modules/material-kit/assets/scss/core/mixins/colored-shadows";
-@import "node_modules/material-kit/assets/scss/core/mixins/forms";
-@import "node_modules/material-kit/assets/scss/core/mixins/hover";
-@import "node_modules/material-kit/assets/scss/core/mixins/type";
-@import "node_modules/material-kit/assets/scss/core/mixins/animations";
-
-// Borrowed Components
-@import "node_modules/material-kit/assets/scss/core/buttons";
-@import "node_modules/material-kit/assets/scss/core/cards";
-@import "node_modules/material-kit/assets/scss/core/forms";
-@import "node_modules/material-kit/assets/scss/core/type";
-// @import "node_modules/material-kit/assets/scss/core/nav";
-// @import "node_modules/material-kit/assets/scss/core/nav-bar";
-// @import "node_modules/material-kit/assets/scss/core/responsive";
-// @import "node_modules/material-kit/assets/scss/core/tabs";
-// @import "node_modules/material-kit/assets/scss/core/tooltip";
-
 // Custom Components
 @import "components/base";
+@import "components/buttons";
 @import "components/forms";
 @import "components/gods";
 @import "components/pantheons";

@@ -5,33 +5,20 @@
  */
 
 body {
-  background-color: $background-color;
-  color: $text-color;
+  @extend %base-text;
+}
+body {
+  background-color: $white-color;
   padding: 30px;
 }
+
+/**
+ * Modifiers
+ */
 .is-centered {
   margin-left: auto;
   margin-right: auto;
 }
-.has-top-divider {
-  border-top: 1px solid $light-color;
-  margin-top: 30px;
-}
-/*
- * Typography
- */
-
-.link {
-  color: $link-color;
-  font-weight: 600;
-  text-decoration: none;
-
-  &:visited {
-    color: $link-visited-color;
-  }
-
-  &:hover, &:visited:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
+.text-is-centered {
+  text-align: center;
 }

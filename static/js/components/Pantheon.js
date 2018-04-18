@@ -4,7 +4,7 @@ import { God } from "./God";
 
 export const Pantheon = function(props) {
   return (
-    <div>
+    <div className="text-is-centered">
       <h3 className="title">Results</h3>
       {props.gods.map((god, i) => (
         <div key={"god" + i}>
