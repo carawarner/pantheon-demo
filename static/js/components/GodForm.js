@@ -42,27 +42,27 @@ export default class GodForm extends React.Component {
     const domainB = titleCase(this.state.seedWordB);
 
     return (
-      <div>
-        <p>
+      <div className="god-form">
+        <div>
           The {godTitle} of {domainA} and {domainB}
-        </p>
+        </div>
         <input
           type="text"
-          className="form-control"
+          className="god-form-input"
           placeholder={this.state.seedWordA || "..."}
           id="seedWordA"
           onChange={this.handleChange}
         />
         <input
           type="text"
-          className="form-control"
+          className="god-form-input"
           placeholder={this.state.seedWordB || "..."}
           id="seedWordB"
           onChange={this.handleChange}
         />
 
         <select
-          className="form-control pantheon-form-select"
+          className="god-form-select"
           id="chromosomes"
           value={this.state.chromosomes}
           onChange={this.handleChange}
@@ -72,7 +72,7 @@ export default class GodForm extends React.Component {
         </select>
 
         <select
-          className="form-control pantheon-form-select"
+          className="god-form-select"
           id="gender"
           value={this.state.gender}
           onChange={this.handleChange}

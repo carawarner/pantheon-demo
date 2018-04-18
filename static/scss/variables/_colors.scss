@@ -1,12 +1,12 @@
 // Pallet
 
-$white: #FFF;
+$white: #fff;
 $black: #333;
-$main-color: #F4BC50;           // casablanca
-$light-color: #F5F6F4;          // "desert storm
-$light-accent-color: #9B9FA8;   // "santas gray"
-$dark-color: #838198;           // "waterloo"
-$dark-accent-color: #3C4858;    // unknown
+$main-color: #f4bc50; // casablanca
+$light-color: #f5f6f4; // "desert storm
+$light-accent-color: #9b9fa8; // "santas gray"
+$dark-color: #838198; // "waterloo"
+$dark-accent-color: #3c4858; // unknown
 
 // Global
 
@@ -14,12 +14,8 @@ $background-color: $white;
 $text-color: $dark-accent-color;
 $heading-color: $main-color;
 $subheading-color: $dark-color;
+$description-color: #aaaaaa;
 
 $link-color: $main-color;
 $link-hover-color: saturate($main-color, 10%);
 $link-visited-color: $main-color; // diff is distracting
-
-// Overrides for Materials Kit
-
-$btn-default-bg: $main-color;
-$brand-primary: $main-color;

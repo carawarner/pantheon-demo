@@ -31,7 +31,6 @@
     "webpack-cli": "^2.0.13"
   },
   "dependencies": {
-    "material-kit": "^2.0.2",
     "node-sass": "^4.8.3",
     "voca": "^1.4.0"
   }
