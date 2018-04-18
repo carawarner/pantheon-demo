@@ -119,18 +119,15 @@ body {
   .pantheon-form button {
     margin-top: 30px; }
 
-.pantheon-form-row {
-  margin-top: 30px; }
-
 .pantheon-form-item {
   display: block;
   height: 45px;
   position: relative;
   margin-top: 20px; }
 
-.god-form p,
-.pantheon-form p {
-  color: #aaaaaa; }
+.pantheon-form-description {
+  color: #aaaaaa;
+  margin-top: 40px; }
 
 .god-form input,
 .god-form select,
@@ -160,9 +157,6 @@ body {
   top: 0px;
   left: 0px;
   margin: 0px; }
-
-.pantheon-form p.god-form-preview {
-  color: #3c4858; }
 
 .god-name {
   font-weight: 600; }

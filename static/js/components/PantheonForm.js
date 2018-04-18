@@ -107,39 +107,33 @@ export default class PantheonForm extends React.Component {
         <form className="pantheon-form" onSubmit={this.handleSubmit}>
           <div className="pantheon-form-section">
             <h4>Parents of Creation</h4>
-            <div className="pantheon-form-row">
-              <p className="description">1st God of Creation</p>
-              <GodForm
-                defaultChromosomes={GodForm.XX}
-                onChange={update => {
-                  this.setState({ godA: update });
-                }}
-              />
-            </div>
-            <div className="pantheon-form-row">
-              <p className="description">2nd God of Creation</p>
-              <GodForm
-                defaultChromosomes={GodForm.XY}
-                onChange={update => {
-                  this.setState({ godB: update });
-                }}
-              />
-            </div>
+            <div className="pantheon-form-description">1st God of Creation</div>
+            <GodForm
+              defaultChromosomes={GodForm.XX}
+              onChange={update => {
+                this.setState({ godA: update });
+              }}
+            />
+            <div className="pantheon-form-description">2nd God of Creation</div>
+            <GodForm
+              defaultChromosomes={GodForm.XY}
+              onChange={update => {
+                this.setState({ godB: update });
+              }}
+            />
           </div>
           <div className="pantheon-form-section">
             <h4>Sources</h4>
-            <div className="pantheon-form-row">
-              <NamesSourceSelector
-                namesSource={this.state.namesSource}
-                sourcesOfNames={this.props.sourcesOfNames}
-                handleChange={this.handleChange}
-              />
-              <TextsSourceSelector
-                textsSource={this.state.textsSource}
-                sourcesOfTexts={this.props.sourcesOfTexts}
-                handleChange={this.handleChange}
-              />
-            </div>
+            <NamesSourceSelector
+              namesSource={this.state.namesSource}
+              sourcesOfNames={this.props.sourcesOfNames}
+              handleChange={this.handleChange}
+            />
+            <TextsSourceSelector
+              textsSource={this.state.textsSource}
+              sourcesOfTexts={this.props.sourcesOfTexts}
+              handleChange={this.handleChange}
+            />
           </div>
           <div className="pantheon-form-section">
             <button>Generate</button>

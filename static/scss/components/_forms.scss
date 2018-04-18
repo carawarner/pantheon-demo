@@ -9,20 +9,18 @@
     margin-top: 30px;
   }
 }
-.pantheon-form-row {
-  margin-top: 30px;
-}
 .pantheon-form-item {
   display: block;
   height: 45px;
   position: relative;
   margin-top: 20px;
 }
+.pantheon-form-description {
+  color: $light-gray-color;
+  margin-top: 40px;
+}
 .god-form,
 .pantheon-form {
-  p {
-    color: $light-gray-color;
-  }
   input,
   select {
     background-color: inherit;
@@ -48,7 +46,4 @@
     left: 0px;
     margin: 0px;
   }
-}
-.pantheon-form p.god-form-preview {
-  color: $darkest-gray-color;
 }
