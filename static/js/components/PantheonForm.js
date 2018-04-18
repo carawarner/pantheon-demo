@@ -3,6 +3,35 @@ import PropTypes from "prop-types";
 import GodForm from "./GodForm";
 import { getRandomIndex } from "../utilities";
 
+const NamesSourceSelector = props => (
+  <select
+    placeholder="names"
+    name="namesSource"
+    value={props.namesSource}
+    onChange={props.handleChange}
+  >
+    {props.sourcesOfNames.map((namesSource, i) => (
+      <option value={namesSource} key={"namesSource" + i}>
+        {namesSource} names
+      </option>
+    ))}
+  </select>
+);
+
+const TextsSourceSelector = props => (
+  <select
+    name="textsSource"
+    value={props.textsSource}
+    onChange={props.handleChange}
+  >
+    {props.sourcesOfTexts.map((textsSource, i) => (
+      <option value={textsSource} key={"textsSource" + i}>
+        books about {textsSource}
+      </option>
+    ))}
+  </select>
+);
+
 export default class PantheonForm extends React.Component {
   constructor(props) {
     super(props);
@@ -59,29 +88,16 @@ export default class PantheonForm extends React.Component {
           <div className="pantheon-form-section">
             <h4>Sources</h4>
             <div className="pantheon-form-row">
-              <select
-                placeholder="names"
-                name="namesSource"
-                value={this.state.namesSource}
-                onChange={this.handleChange}
-              >
-                {this.props.sourcesOfNames.map((namesSource, i) => (
-                  <option value={namesSource} key={"namesSource" + i}>
-                    {namesSource} names
-                  </option>
-                ))}
-              </select>
-              <select
-                name="textsSource"
-                value={this.state.textsSource}
-                onChange={this.handleChange}
-              >
-                {this.props.sourcesOfTexts.map((textsSource, i) => (
-                  <option value={textsSource} key={"textsSource" + i}>
-                    books about {textsSource}
-                  </option>
-                ))}
-              </select>
+              <NamesSourceSelector
+                namesSource={this.state.namesSource}
+                sourcesOfNames={this.props.sourcesOfNames}
+                handleChange={this.handleChange}
+              />
+              <TextsSourceSelector
+                textsSource={this.state.textsSource}
+                sourcesOfTexts={this.props.sourcesOfTexts}
+                handleChange={this.handleChange}
+              />
             </div>
           </div>
           <div className="pantheon-form-section">

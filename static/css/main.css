@@ -120,8 +120,10 @@ body {
 
 .pantheon-form-row {
   margin-top: 30px; }
-  .pantheon-form-row .description {
-    color: #aaaaaa; }
+
+.god-form p,
+.pantheon-form p {
+  color: #aaaaaa; }
 
 .god-form input,
 .god-form select,
@@ -138,6 +140,9 @@ body {
 .pantheon-form select {
   border-radius: 0px;
   -webkit-appearance: none; }
+
+.pantheon-form p.god-form-preview {
+  color: #3c4858; }
 
 .god-name {
   font-weight: 600; }

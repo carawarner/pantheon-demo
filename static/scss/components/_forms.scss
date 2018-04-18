@@ -10,13 +10,12 @@
 }
 .pantheon-form-row {
   margin-top: 30px;
-  .description {
-    color: $light-gray-color;
-  }
 }
-
 .god-form,
 .pantheon-form {
+  p {
+    color: $light-gray-color;
+  }
   input,
   select {
     background-color: inherit;
@@ -30,4 +29,7 @@
     border-radius: 0px;
     -webkit-appearance: none;
   }
+}
+.pantheon-form p.god-form-preview {
+  color: $darkest-gray-color;
 }

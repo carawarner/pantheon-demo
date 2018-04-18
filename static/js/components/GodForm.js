@@ -42,8 +42,8 @@ export default class GodForm extends React.Component {
     const domainB = titleCase(this.state.seedWordB);
 
     return (
-      <div className="god-form">
-        <p>
+      <div>
+        <p className="god-form-preview">
           The {godTitle} of {domainA} and {domainB}
         </p>
         <input
