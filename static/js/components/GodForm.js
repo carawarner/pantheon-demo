@@ -12,6 +12,50 @@ const genderTitleMap = {
   [nonBinaryGender]: "Divine Being"
 };
 
+const ChromosomesSelector = props => (
+  <div className="pantheon-form-item">
+    <label htmlFor="chromosomes">Chromosomes</label>
+    <select
+      name="chromosomes"
+      value={props.chromosomes}
+      onChange={props.handleChange}
+    >
+      <option value={XX}>XX (egg donor)</option>
+      <option value={XY}>XY (sperm donor)</option>
+    </select>
+  </div>
+);
+
+const GenderSelector = props => (
+  <div className="pantheon-form-item">
+    <label htmlFor="gender">Gender</label>
+    <select name="gender" value={props.gender} onChange={props.handleChange}>
+      <option value="" disabled>
+        Choose...
+      </option>
+      <option value={femaleGender}>
+        {props.chromosomes === "XX" ? "female" : "female (trans)"}
+      </option>
+      <option value={maleGender}>
+        {props.chromosomes === "XY" ? "male" : "male (trans)"}
+      </option>
+      <option value={nonBinaryGender}>non-binary</option>
+    </select>
+  </div>
+);
+
+const SeedWordInputter = props => (
+  <div className="pantheon-form-item">
+    <label htmlFor={props.name}>{props.label}</label>
+    <input
+      type="text"
+      placeholder={props.placeholder || ""}
+      name={props.name}
+      onChange={props.handleChange}
+    />
+  </div>
+);
+
 export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
@@ -53,55 +97,27 @@ export default class GodForm extends React.Component {
         <p className="god-form-preview">
           The {godTitle} of {domainA} and {domainB}
         </p>
-        <div className="pantheon-form-item" style={{ display: "block" }}>
-          <label htmlFor="chromosomes">Chromosomes</label>
-          <select
-            name="chromosomes"
-            value={this.state.chromosomes}
-            onChange={this.handleChange}
-          >
-            <option value={XX}>XX (egg donor)</option>
-            <option value={XY}>XY (sperm donor)</option>
-          </select>
-        </div>
-
-        <div className="pantheon-form-item" style={{ display: "block" }}>
-          <label htmlFor="gender">Gender</label>
-          <select
-            name="gender"
-            value={this.state.gender}
-            onChange={this.handleChange}
-          >
-            <option value="" disabled>
-              Choose...
-            </option>
-            <option value={femaleGender}>
-              {this.state.chromosomes === "XX" ? "female" : "female (trans)"}
-            </option>
-            <option value={maleGender}>
-              {this.state.chromosomes === "XY" ? "male" : "male (trans)"}
-            </option>
-            <option value={nonBinaryGender}>non-binary</option>
-          </select>
-        </div>
-        <div className="pantheon-form-item" style={{ display: "block" }}>
-          <label htmlFor="seedWordA">Egg Word</label>
-          <input
-            type="text"
-            placeholder={this.state.seedWordA || ""}
-            name="seedWordA"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="pantheon-form-item" style={{ display: "block" }}>
-          <label htmlFor="seedWordB">Sperm Word</label>
-          <input
-            type="text"
-            placeholder={this.state.seedWordB}
-            name="seedWordB"
-            onChange={this.handleChange}
-          />
-        </div>
+        <ChromosomesSelector
+          chromosomes={this.state.chromosomes}
+          handleChange={this.handleChange}
+        />
+        <GenderSelector
+          gender={this.state.gender}
+          chromosomes={this.state.chromosomes}
+          handleChange={this.handleChange}
+        />
+        <SeedWordInputter
+          name="seedWordA"
+          label="Egg Word"
+          placeholder={this.state.seedWordA}
+          handleChange={this.handleChange}
+        />
+        <SeedWordInputter
+          name="seedWordB"
+          label="Sperm Word"
+          placeholder={this.state.seedWordB}
+          handleChange={this.handleChange}
+        />
       </div>
     );
   }
