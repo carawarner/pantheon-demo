@@ -6,7 +6,7 @@ import { getRandomIndex } from "../utilities";
 const NamesSourceSelector = props => (
   <select
     placeholder="names"
-    name="namesSource"
+    id="namesSource"
     value={props.namesSource}
     onChange={props.handleChange}
   >
@@ -20,7 +20,7 @@ const NamesSourceSelector = props => (
 
 const TextsSourceSelector = props => (
   <select
-    name="textsSource"
+    id="textsSource"
     value={props.textsSource}
     onChange={props.handleChange}
   >
@@ -51,9 +51,9 @@ export default class PantheonForm extends React.Component {
 
   handleChange(e) {
     let target = e.target;
-    console.log(`User selected ${target.name}: ${target.value}`);
+    console.log(`User selected ${target.id}: ${target.value}`);
     this.setState({
-      [target.name]: target.value
+      [target.id]: target.value
     });
   }
 
