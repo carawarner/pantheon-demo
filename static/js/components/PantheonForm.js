@@ -38,6 +38,17 @@ const TextsSourceSelector = props => (
   </div>
 );
 
+const GodOfCreationForm = props => (
+  <div>
+    <div className="pantheon-form-description">{props.description}</div>
+    <GodForm
+      defaultChromosomes={props.defaultChromosomes}
+      godID={props.godID}
+      onChange={props.handleChange}
+    />
+  </div>
+);
+
 export default class PantheonForm extends React.Component {
   constructor(props) {
     super(props);
@@ -53,6 +64,7 @@ export default class PantheonForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateGod = this.updateGod.bind(this);
   }
 
   validateForm() {
@@ -74,6 +86,10 @@ export default class PantheonForm extends React.Component {
     }
 
     return formIsValid;
+  }
+
+  updateGod(godKey, update) {
+    this.setState({ [godKey]: update });
   }
 
   handleChange(e) {
@@ -105,36 +121,33 @@ export default class PantheonForm extends React.Component {
     return (
       <div className="text-is-centered">
         <form className="pantheon-form" onSubmit={this.handleSubmit}>
-          <div className="pantheon-form-section">
-            <h4>Parents of Creation</h4>
-            <div className="pantheon-form-description">1st God of Creation</div>
-            <GodForm
-              defaultChromosomes={GodForm.XX}
-              onChange={update => {
-                this.setState({ godA: update });
-              }}
-            />
-            <div className="pantheon-form-description">2nd God of Creation</div>
-            <GodForm
-              defaultChromosomes={GodForm.XY}
-              onChange={update => {
-                this.setState({ godB: update });
-              }}
-            />
-          </div>
-          <div className="pantheon-form-section">
-            <h4>Sources</h4>
-            <NamesSourceSelector
-              namesSource={this.state.namesSource}
-              sourcesOfNames={this.props.sourcesOfNames}
-              handleChange={this.handleChange}
-            />
-            <TextsSourceSelector
-              textsSource={this.state.textsSource}
-              sourcesOfTexts={this.props.sourcesOfTexts}
-              handleChange={this.handleChange}
-            />
-          </div>
+          <h4>Parents of Creation</h4>
+
+          <GodOfCreationForm
+            defaultChromosomes={GodForm.XX}
+            handleChange={this.updateGod}
+            godID={"godA"}
+            description={"1st God of Creation"}
+          />
+          <GodOfCreationForm
+            defaultChromosomes={GodForm.XY}
+            handleChange={this.updateGod}
+            godID={"godB"}
+            description={"2nd God of Creation"}
+          />
+
+          <h4>Sources</h4>
+
+          <NamesSourceSelector
+            namesSource={this.state.namesSource}
+            sourcesOfNames={this.props.sourcesOfNames}
+            handleChange={this.handleChange}
+          />
+          <TextsSourceSelector
+            textsSource={this.state.textsSource}
+            sourcesOfTexts={this.props.sourcesOfTexts}
+            handleChange={this.handleChange}
+          />
           <div className="pantheon-form-section">
             <button>Generate</button>
           </div>

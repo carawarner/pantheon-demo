@@ -84,7 +84,7 @@ export default class GodForm extends React.Component {
       [target.name]: target.value
     });
     const newState = Object.assign(this.state, { [target.name]: target.value });
-    this.props.onChange(newState);
+    this.props.onChange(this.props.godID, newState);
   }
 
   render() {
