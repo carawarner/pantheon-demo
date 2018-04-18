@@ -59,7 +59,13 @@ export default class PantheonForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchPantheon(this.state);
+    const options = {
+      namesSource: this.state.namesSource,
+      textsSource: this.state.textsSource,
+      godA: this.state.godA,
+      godB: this.state.godB
+    };
+    this.props.fetchPantheon(options);
   }
 
   render() {
