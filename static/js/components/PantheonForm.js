@@ -4,32 +4,38 @@ import GodForm from "./GodForm";
 import { getRandomIndex } from "../utilities";
 
 const NamesSourceSelector = props => (
-  <select
-    placeholder="names"
-    name="namesSource"
-    value={props.namesSource}
-    onChange={props.handleChange}
-  >
-    {props.sourcesOfNames.map((namesSource, i) => (
-      <option value={namesSource} key={"namesSource" + i}>
-        {namesSource} names
-      </option>
-    ))}
-  </select>
+  <div className="pantheon-form-item">
+    <label htmlFor="namesSource">Pick Names</label>
+    <select
+      placeholder="names"
+      name="namesSource"
+      value={props.namesSource}
+      onChange={props.handleChange}
+    >
+      {props.sourcesOfNames.map((namesSource, i) => (
+        <option value={namesSource} key={"namesSource" + i}>
+          {namesSource} names
+        </option>
+      ))}
+    </select>
+  </div>
 );
 
 const TextsSourceSelector = props => (
-  <select
-    name="textsSource"
-    value={props.textsSource}
-    onChange={props.handleChange}
-  >
-    {props.sourcesOfTexts.map((textsSource, i) => (
-      <option value={textsSource} key={"textsSource" + i}>
-        books about {textsSource}
-      </option>
-    ))}
-  </select>
+  <div className="pantheon-form-item">
+    <label htmlFor="textsSource">Pick a "Gene Pool"</label>
+    <select
+      name="textsSource"
+      value={props.textsSource}
+      onChange={props.handleChange}
+    >
+      {props.sourcesOfTexts.map((textsSource, i) => (
+        <option value={textsSource} key={"textsSource" + i}>
+          books about {textsSource}
+        </option>
+      ))}
+    </select>
+  </div>
 );
 
 export default class PantheonForm extends React.Component {
@@ -49,6 +55,27 @@ export default class PantheonForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  validateForm() {
+    let formIsValid = true;
+    const { namesSource, textsSource, godA, godB } = this.state;
+    console.log(godA);
+
+    if (godA.chromosomes === godB.chromosomes) {
+      alert("Pantheon requires an egg donor and a sperm donor.");
+      formIsValid = false;
+    }
+    if (
+      !godA.seedWordA ||
+      !godA.seedWordB ||
+      !godB.seedWordA ||
+      !godB.seedWordB
+    ) {
+      alert("One or more seed words is empty");
+    }
+
+    return formIsValid;
+  }
+
   handleChange(e) {
     let target = e.target;
     console.log(`User selected ${target.name}: ${target.value}`);
@@ -59,6 +86,12 @@ export default class PantheonForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    if (!this.validateForm()) {
+      alert("There are errors.");
+      return;
+    }
+
     const options = {
       namesSource: this.state.namesSource,
       textsSource: this.state.textsSource,
