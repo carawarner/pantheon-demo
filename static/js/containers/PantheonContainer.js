@@ -46,7 +46,7 @@ export default class PantheonContainer extends React.Component {
       <div>
         <section>
           <PantheonForm
-            fetchPantheon={this.fetchPantheon}
+            onSubmit={this.fetchPantheon}
             sourcesOfNames={this.fetchSourcesOfNames()}
             sourcesOfTexts={this.fetchSourcesOfTexts()}
           />
