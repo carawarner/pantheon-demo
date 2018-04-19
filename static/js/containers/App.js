@@ -1,6 +1,7 @@
 import React from "react";
 import PantheonContainer from "./PantheonContainer";
 import { About } from "../components/About";
+import "../../css/main.css";
 
 export default class App extends React.Component {
   render() {
