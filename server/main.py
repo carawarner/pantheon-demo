@@ -1,13 +1,10 @@
 from flask import Flask, render_template
+from pantheon.pantheons import Pantheon
 app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
 
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
-
-@app.route('/hello', methods=['GET'])
-def hello():
-    return 'Hello World!'
 
 if __name__ == '__main__':
     app.run()
