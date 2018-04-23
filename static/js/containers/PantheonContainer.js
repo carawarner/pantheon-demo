@@ -1,19 +1,41 @@
 import React from "react";
+import axios from "axios";
 import { Pantheon } from "../components/Pantheon";
 import PantheonForm from "../components/PantheonForm";
 
 export default class PantheonContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { gods: [] };
+    this.state = {
+      gods: [],
+      sourcesOfNames: [],
+      sourcesOfTexts: []
+    };
     this.fetchPantheon = this.fetchPantheon.bind(this);
   }
 
-  componentDidMount() {
-    //TODO: This will be unecessary when empty state UI is handled
-    this.setState({
-      gods: pantheonA
-    });
+  componentWillMount() {
+    this.fetchSourcesOfNames();
+    this.fetchSourcesOfTexts();
+  }
+
+  fetchSourcesOfNames() {
+    this.setState({ sourcesOfNames: ["baz", "lur"] });
+    var $this = this;
+    axios
+      .get("/api/names")
+      .then(function(response) {
+        console.log(response["data"]["names"]);
+        $this.setState({ sourcesOfNames: response["data"]["names"] });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  fetchSourcesOfTexts() {
+    //TODO: This placeholder should be replaced with an API call
+    return ["fairy-tales", "nutrition", "everything"];
   }
 
   fetchPantheon(options) {
@@ -31,23 +53,13 @@ export default class PantheonContainer extends React.Component {
     const { namesSource, textsSource, godA, godB } = options;
   }
 
-  fetchSourcesOfNames(options) {
-    //TODO: This placeholder should be replaced with an API call
-    return ["norwegian", "french", "german"];
-  }
-
-  fetchSourcesOfTexts() {
-    //TODO: This placeholder should be replaced with an API call
-    return ["fairy-tales", "nutrition", "everything"];
-  }
-
   render() {
     return (
       <div>
         <section>
           <PantheonForm
             onSubmit={this.fetchPantheon}
-            sourcesOfNames={this.fetchSourcesOfNames()}
+            sourcesOfNames={this.state.sourcesOfNames}
             sourcesOfTexts={this.fetchSourcesOfTexts()}
           />
         </section>
