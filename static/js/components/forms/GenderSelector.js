@@ -9,17 +9,11 @@ export const GenderSelector = props => (
       <option value="" disabled>
         choose...
       </option>
-      <option value={constants.femaleGender}>
-        {props.chromosomes === constants.XX
-          ? constants.femaleGender
-          : constants.femaleGender + "(trans)"}
-      </option>
-      <option value={constants.maleGender}>
-        {props.chromosomes === constants.XY
-          ? constants.maleGender
-          : constants.maleGender + "(trans)"}
-      </option>
-      <option value={constants.nonBinaryGender}>non-binary</option>
+      {Object.keys(constants.genderLabelMap).map((gender, i) => (
+        <option value={gender} key={"gender_" + i}>
+          {constants.genderLabelMap[gender][props.chromosomes]}
+        </option>
+      ))}
     </select>
   </div>
 );
