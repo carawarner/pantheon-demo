@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Pantheon } from "../components/Pantheon";
-import PantheonForm from "../components/PantheonForm";
+import PantheonForm from "../components/forms/PantheonForm";
 
 export default class PantheonContainer extends React.Component {
   constructor(props) {
