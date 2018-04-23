@@ -1,12 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-const XX = "XX";
-const XY = "XY";
-
-const femaleGender = "female";
-const maleGender = "male";
-const nonBinaryGender = "non-binary";
+import * as constants from "../../constants";
 
 export const GenderSelector = props => (
   <div className="pantheon-form-item">
@@ -15,13 +9,17 @@ export const GenderSelector = props => (
       <option value="" disabled>
         choose...
       </option>
-      <option value={femaleGender}>
-        {props.chromosomes === XX ? femaleGender : femaleGender + "(trans)"}
+      <option value={constants.femaleGender}>
+        {props.chromosomes === constants.XX
+          ? constants.femaleGender
+          : constants.femaleGender + "(trans)"}
       </option>
-      <option value={maleGender}>
-        {props.chromosomes === XY ? maleGender : maleGender + "(trans)"}
+      <option value={constants.maleGender}>
+        {props.chromosomes === constants.XY
+          ? constants.maleGender
+          : constants.maleGender + "(trans)"}
       </option>
-      <option value={nonBinaryGender}>non-binary</option>
+      <option value={constants.nonBinaryGender}>non-binary</option>
     </select>
   </div>
 );

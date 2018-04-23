@@ -4,23 +4,13 @@ import { titleCase } from "voca";
 import { ChromosomesSelector } from "./ChromosomesSelector";
 import { GenderSelector } from "./GenderSelector";
 import { SeedWordInputter } from "./SeedWordInputter";
-
-const XX = "XX";
-const XY = "XY";
-const femaleGender = "female";
-const maleGender = "male";
-const nonBinaryGender = "non-binary";
-const genderTitleMap = {
-  [femaleGender]: "Goddess",
-  [maleGender]: "God",
-  [nonBinaryGender]: "Divine Being"
-};
+import * as constants from "../../constants";
 
 export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: this.props.chromosomes || XX,
+      chromosomes: this.props.chromosomes || constants.XX,
       gender: "",
       seedWordA: "",
       seedWordB: ""
@@ -41,7 +31,7 @@ export default class GodForm extends React.Component {
   }
 
   render() {
-    const godTitle = genderTitleMap[this.state.gender] || "...";
+    const godTitle = constants.genderTitleMap[this.state.gender] || "...";
     const domainA = titleCase(this.state.seedWordA) || "...";
     const domainB = titleCase(this.state.seedWordB) || "...";
 

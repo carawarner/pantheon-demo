@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-export const XX = "XX";
-export const XY = "XY";
+import * as constants from "../../constants";
 
 export const ChromosomesSelector = props => (
   <div className="pantheon-form-item">
@@ -12,8 +10,8 @@ export const ChromosomesSelector = props => (
       value={props.chromosomes}
       onChange={props.onChange}
     >
-      <option value={XX}>XX (egg donor)</option>
-      <option value={XY}>XY (sperm donor)</option>
+      <option value={constants.XX}>XX (egg donor)</option>
+      <option value={constants.XY}>XY (sperm donor)</option>
     </select>
   </div>
 );
