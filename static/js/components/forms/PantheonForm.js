@@ -46,8 +46,8 @@ export default class PantheonForm extends React.Component {
 }
 
 PantheonForm.propTypes = {
-  sourcesOfNames: PropTypes.array.isRequired,
-  sourcesOfTexts: PropTypes.array.isRequired,
+  sourcesOfNames: PropTypes.array,
+  sourcesOfTexts: PropTypes.array,
   namesSource: PropTypes.string,
   textsSource: PropTypes.string,
   onChange: PropTypes.func.isRequired,

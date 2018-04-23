@@ -12,14 +12,14 @@ export const NamesSourceSelector = props => (
     >
       {props.sourcesOfNames.map((namesSource, i) => (
         <option value={namesSource} key={"namesSource" + i}>
-          {namesSource} names
+          {namesSource}
         </option>
       ))}
     </select>
   </div>
 );
 NamesSourceSelector.propTypes = {
-  namesSource: PropTypes.string.isRequired,
-  sourcesOfNames: PropTypes.array.isRequired,
+  namesSource: PropTypes.string,
+  sourcesOfNames: PropTypes.array,
   onChange: PropTypes.func.isRequired
 };

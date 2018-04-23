@@ -2,16 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import PantheonForm from "../components/forms/PantheonForm";
+import { getRandomItem } from "../utilities";
 
 export default class PantheonFormContainer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      sourcesOfNames: this.fetchSourcesOfNames(),
-      sourcesOfTexts: this.fetchSourcesOfTexts(),
-      namesSource: "french",
-      textsSource: "nutrition",
+      namesSource: "",
+      textsSource: "",
+      sourcesOfNames: [],
+      sourcesOfTexts: [],
       godA: "",
       godB: ""
     };
@@ -19,6 +20,11 @@ export default class PantheonFormContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleEmbeddedFormChange = this.handleEmbeddedFormChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillMount() {
+    this.setSourcesOfNames();
+    this.setSourcesOfTexts();
   }
 
   handleChange(e) {
@@ -38,14 +44,26 @@ export default class PantheonFormContainer extends React.Component {
     this.props.updateGods(gods);
   }
 
-  fetchSourcesOfNames() {
-    //TODO: replace with API call
-    return ["norwegian", "french", "german"];
+  async setSourcesOfNames() {
+    axios
+      .get("/api/names")
+      .then(response => {
+        const names = response.data.names;
+        this.setState({
+          sourcesOfNames: names,
+          namesSource: getRandomItem(names)
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-  fetchSourcesOfTexts() {
+  setSourcesOfTexts() {
     //TODO: replace with API call
-    return ["ecclectic", "fairy-tales", "nutrition"];
+    this.setState({
+      sourcesOfTexts: ["ecclectic", "fairy-tales", "nutrition"]
+    });
   }
 
   fetchPantheon() {
