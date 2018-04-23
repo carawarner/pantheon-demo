@@ -124,13 +124,13 @@ export default class GodForm extends React.Component {
         />
         <SeedWordInputter
           name="seedWordA"
-          label="A Domain (a word like Art)"
+          label="First Domain (a word such as 'art')"
           seedWord={this.state.seedWordA}
           onChange={this.handleChange}
         />
         <SeedWordInputter
           name="seedWordB"
-          label="Another Domain (a word like Science)"
+          label="Second Domain (a word such as 'science')"
           seedWord={this.state.seedWordB}
           onChange={this.handleChange}
         />
