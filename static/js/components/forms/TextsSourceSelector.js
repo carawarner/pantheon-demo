@@ -11,10 +11,13 @@ export const TextsSourceSelector = props => (
     >
       {props.sourcesOfTexts.map((textsSource, i) => (
         <option value={textsSource} key={"textsSource" + i}>
-          books about {textsSource}
+          {textsSource}
         </option>
       ))}
     </select>
+    <div className="pantheon-form-qualifier">
+      The Gene Pool is the corpora from which related words will be drawn.
+    </div>
   </div>
 );
 TextsSourceSelector.propTypes = {
