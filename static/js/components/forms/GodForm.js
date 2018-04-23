@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { titleCase } from "voca";
+import { ChromosomesSelector } from "./ChromosomesSelector";
+import { GenderSelector } from "./GenderSelector";
+import { SeedWordInputter } from "./SeedWordInputter";
 
 const XX = "XX";
 const XY = "XY";
@@ -11,65 +14,6 @@ const genderTitleMap = {
   [femaleGender]: "Goddess",
   [maleGender]: "God",
   [nonBinaryGender]: "Divine Being"
-};
-
-const ChromosomesSelector = props => (
-  <div className="pantheon-form-item">
-    <label htmlFor="chromosomes">Chromosomes</label>
-    <select
-      name="chromosomes"
-      value={props.chromosomes}
-      onChange={props.onChange}
-    >
-      <option value={XX}>XX (egg donor)</option>
-      <option value={XY}>XY (sperm donor)</option>
-    </select>
-  </div>
-);
-ChromosomesSelector.propTypes = {
-  chromosomes: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
-};
-
-const GenderSelector = props => (
-  <div className="pantheon-form-item">
-    <label htmlFor="gender">Gender</label>
-    <select name="gender" value={props.gender} onChange={props.onChange}>
-      <option value="" disabled>
-        choose...
-      </option>
-      <option value={femaleGender}>
-        {props.chromosomes === "XX" ? "female" : "female (trans)"}
-      </option>
-      <option value={maleGender}>
-        {props.chromosomes === "XY" ? "male" : "male (trans)"}
-      </option>
-      <option value={nonBinaryGender}>non-binary</option>
-    </select>
-  </div>
-);
-GenderSelector.propTypes = {
-  gender: PropTypes.string.isRequired,
-  chromosomes: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
-};
-
-const SeedWordInputter = props => (
-  <div className="pantheon-form-item">
-    <label htmlFor={props.name}>{props.label}</label>
-    <input
-      type="text"
-      placeholder={props.seedWord || ""}
-      name={props.name}
-      onChange={props.onChange}
-    />
-  </div>
-);
-SeedWordInputter.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  seedWord: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
 };
 
 export default class GodForm extends React.Component {
@@ -83,13 +27,6 @@ export default class GodForm extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  static get XX() {
-    return XX;
-  }
-  static get XY() {
-    return XY;
   }
 
   handleChange(e) {

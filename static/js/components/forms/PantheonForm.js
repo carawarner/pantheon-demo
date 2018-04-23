@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import GodForm from "./GodForm";
+import { XX, XY } from "./ChromosomesSelector";
 import { NamesSourceSelector } from "./NamesSourceSelector";
 import { TextsSourceSelector } from "./TextsSourceSelector";
 import { getRandomItem } from "../../utilities";
@@ -14,13 +15,13 @@ export default class PantheonForm extends React.Component {
           <h4>Parents of Creation</h4>
           <div className="pantheon-form-description">1st God of Creation</div>
           <GodForm
-            chromosomes={GodForm.XX}
+            chromosomes={XX}
             godID="godA"
             onChange={this.props.onEmbeddedFormChange}
           />
           <div className="pantheon-form-description">2nd God of Creation</div>
           <GodForm
-            chromosomes={GodForm.XY}
+            chromosomes={XY}
             godID="godB"
             onChange={this.props.onEmbeddedFormChange}
           />
