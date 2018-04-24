@@ -38,45 +38,50 @@ export default class PantheonFormContainer extends React.Component {
     this.setState({ [key]: update });
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
-    let gods = this.fetchPantheon();
-    this.props.updateGods(gods);
+
+    const jsonData = {
+      namesSource: this.state.namesSource,
+      textsSource: this.state.textsSource,
+      godA: this.state.godA,
+      godB: this.state.godB
+    };
+
+    try {
+      const response = await axios.post("/api/gods", jsonData);
+      const gods = response.data.gods;
+      console.log(gods);
+      this.props.updateGods(gods);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async setSourcesOfNames() {
-    axios
-      .get("/api/names")
-      .then(response => {
-        const names = response.data.names;
-        this.setState({
-          sourcesOfNames: names,
-          namesSource: getRandomItem(names)
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    try {
+      const response = await axios.get("/api/names");
+      const names = response.data.names;
+      this.setState({
+        sourcesOfNames: names,
+        namesSource: getRandomItem(names)
       });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  setSourcesOfTexts() {
-    axios
-      .get("/api/texts")
-      .then(response => {
-        const texts = response.data.texts;
-        this.setState({
-          sourcesOfTexts: texts,
-          textsSource: getRandomItem(texts)
-        });
-      })
-      .catch(error => {
-        console.log(error);
+  async setSourcesOfTexts() {
+    try {
+      const response = await axios.get("/api/texts");
+      const texts = response.data.texts;
+      this.setState({
+        sourcesOfTexts: texts,
+        textsSource: getRandomItem(texts)
       });
-  }
-
-  fetchPantheon() {
-    //TODO: replace with API call
-    return Math.random() > 0.5 ? pantheonA : pantheonB;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {

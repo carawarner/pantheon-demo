@@ -1,22 +1,22 @@
 export const XX = "XX";
 export const XY = "XY";
 
-export const femaleGender = "female";
-export const maleGender = "male";
-export const nonBinaryGender = "non-binary";
+export const femaleGender = "F";
+export const maleGender = "M";
+export const nonBinaryGender = "NB";
 
 export const genderLabelMap = {
   [femaleGender]: {
-    [XX]: femaleGender,
-    [XY]: femaleGender + "(trans)"
+    [XX]: "female",
+    [XY]: "female (trans)"
   },
   [maleGender]: {
-    [XX]: maleGender + "(trans)",
-    [XY]: maleGender
+    [XX]: "male (trans)",
+    [XY]: "male"
   },
   [nonBinaryGender]: {
-    [XX]: nonBinaryGender,
-    [XY]: nonBinaryGender
+    [XX]: "non-binary",
+    [XY]: "non-binary"
   }
 };
 

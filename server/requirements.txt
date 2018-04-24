@@ -1,2 +1,2 @@
 Flask==0.12.2
-pantheon-generator=0.9.5
+pantheon-generator==0.9.7
