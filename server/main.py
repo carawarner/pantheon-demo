@@ -33,12 +33,11 @@ def fetch_gods():
     parentA = God(godA['seedWordA'], godA['seedWordB'], godA['chromosomes'], godA['gender'])
     parentB = God(godB['seedWordA'], godB['seedWordB'], godB['chromosomes'], godB['gender'])
 
-    new_gods = [
-        parentA.__dict__,
-        parentB.__dict__
-    ]
+    pantheon = Pantheon(parentA, parentB)
+    pantheon.spawn(5)
+    gods = [god.__dict__ for god in list(pantheon.__dict__['gods'].values())]
 
-    return jsonify({'gods': new_gods})
+    return jsonify({'gods': gods})
 
 if __name__ == '__main__':
     app.run()
