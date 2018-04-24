@@ -60,10 +60,18 @@ export default class PantheonFormContainer extends React.Component {
   }
 
   setSourcesOfTexts() {
-    //TODO: replace with API call
-    this.setState({
-      sourcesOfTexts: ["ecclectic", "fairy-tales", "nutrition"]
-    });
+    axios
+      .get("/api/texts")
+      .then(response => {
+        const texts = response.data.texts;
+        this.setState({
+          sourcesOfTexts: texts,
+          textsSource: getRandomItem(texts)
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   fetchPantheon() {
