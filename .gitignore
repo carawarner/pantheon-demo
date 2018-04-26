@@ -1,5 +1,4 @@
-static/dist
-env/*
-server/env/*
-__pycache__
-*/node_modules
+*.pyc
+app/static/dist
+app/static/node_modules
+app/venv
