@@ -1,4 +1,4 @@
 #!/usr/bin/python
 import sys
-sys.path.append("/var/www/html")
-from pantheon-demo import app as application
+sys.path.append("/var/www/pantheondemo")
+from app import app as application
