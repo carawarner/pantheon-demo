@@ -9,6 +9,7 @@ export default class PantheonFormContainer extends React.Component {
     super(props);
 
     this.state = {
+      loading: false,
       namesSource: "",
       textsSource: "",
       sourcesOfNames: [],
@@ -40,6 +41,7 @@ export default class PantheonFormContainer extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
+    this.setState({ loading: true });
 
     const jsonData = {
       namesSource: this.state.namesSource,
@@ -56,6 +58,8 @@ export default class PantheonFormContainer extends React.Component {
     } catch (error) {
       console.log(error);
     }
+
+    this.setState({ loading: false });
   }
 
   async setSourcesOfNames() {
@@ -87,6 +91,7 @@ export default class PantheonFormContainer extends React.Component {
   render() {
     return (
       <PantheonForm
+        loading={this.state.loading}
         sourcesOfNames={this.state.sourcesOfNames}
         sourcesOfTexts={this.state.sourcesOfTexts}
         namesSource={this.state.namesSource}

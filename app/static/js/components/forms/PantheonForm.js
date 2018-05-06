@@ -39,6 +39,7 @@ export default class PantheonForm extends React.Component {
           />
           <div className="pantheon-form-section">
             <button>Generate</button>
+            {this.props.loading && <p>LOADING...</p>}
           </div>
         </form>
       </div>
@@ -47,6 +48,7 @@ export default class PantheonForm extends React.Component {
 }
 
 PantheonForm.propTypes = {
+  loading: PropTypes.bool,
   sourcesOfNames: PropTypes.array,
   sourcesOfTexts: PropTypes.array,
   namesSource: PropTypes.string,

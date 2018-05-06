@@ -16,13 +16,6 @@ export const About = function(props) {
         library. It uses sexual reproduction as a metaphor to procedurally
         generate deities that feel related.
       </p>
-      <p>
-        <span class="is-warning">
-          WARNING: beta has NO form validation and NO loading spinner.{" "}
-        </span>{" "}
-        Fill everything in, provide an egg donor and a sperm donor, and be
-        patient. Generation takes several seconds.
-      </p>
     </div>
   );
 };
