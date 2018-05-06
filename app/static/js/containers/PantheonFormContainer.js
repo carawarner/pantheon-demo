@@ -102,29 +102,3 @@ export default class PantheonFormContainer extends React.Component {
 PantheonFormContainer.propTypes = {
   updateGods: PropTypes.func.isRequired
 };
-
-const pantheonA = [
-  {
-    name: "Kjell",
-    epithet: "God of Magicians and Novelists"
-  },
-  {
-    name: "Gunne",
-    epithet: "Goddess of labors and truths"
-  },
-  {
-    name: "Valter",
-    epithet: "Demi-God of Calamities"
-  }
-];
-
-const pantheonB = [
-  {
-    name: "Hedda",
-    epithet: "Demi-Goddess of engineers"
-  },
-  {
-    name: "Eindride",
-    epithet: "Demi-God of folklorists"
-  }
-];
