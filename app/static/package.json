@@ -13,7 +13,10 @@
   "author": "Cara Warner",
   "license": "MIT",
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
