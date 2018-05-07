@@ -133,12 +133,23 @@ body {
   color: #aaaaaa;
   margin-top: 40px; }
 
-.pantheon-form-qualifier {
+.qualifier, .pantheon-form-qualifier {
   color: #aaaaaa;
-  position: absolute;
-  top: 60px;
   font-size: 12px;
   font-style: italic; }
+
+.pantheon-form-qualifier {
+  position: absolute;
+  top: 60px; }
+
+.pantheon-form-spinner {
+  color: #f4bc50;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px; }
 
 .god-form input,
 .god-form select,

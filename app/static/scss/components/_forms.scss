@@ -19,13 +19,26 @@
   color: $light-gray-color;
   margin-top: 40px;
 }
-.pantheon-form-qualifier {
+.qualifier {
   color: $light-gray-color;
-  position: absolute;
-  top: 60px;
   font-size: 12px;
   font-style: italic;
 }
+.pantheon-form-qualifier {
+  @extend .qualifier;
+  position: absolute;
+  top: 60px;
+}
+.pantheon-form-spinner {
+  color: $yellow-color;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
 .god-form,
 .pantheon-form {
   input,
