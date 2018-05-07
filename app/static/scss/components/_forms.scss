@@ -26,6 +26,16 @@
   font-size: 12px;
   font-style: italic;
 }
+.pantheon-form-spinner {
+  color: $yellow-color;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
 .god-form,
 .pantheon-form {
   input,

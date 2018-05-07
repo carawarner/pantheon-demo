@@ -140,6 +140,15 @@ body {
   font-size: 12px;
   font-style: italic; }
 
+.pantheon-form-spinner {
+  color: #f4bc50;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px; }
+
 .god-form input,
 .god-form select,
 .pantheon-form input,
