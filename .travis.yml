@@ -1,12 +1,16 @@
 language: node_js
+
 node_js:
   - "stable"
+
 cache:
   directories:
   - app/static/node_modules
+
 before_install: cd app/static
 install:
   - npm install
+
 script:
   - npm test
   - npm run build
