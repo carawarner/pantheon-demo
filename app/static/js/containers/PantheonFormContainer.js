@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import PantheonForm from "../components/forms/PantheonForm";
+import PantheonForm from "../components/PantheonForm";
 import { getRandomItem } from "../utilities";
 
 export default class PantheonFormContainer extends React.Component {
