@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { titleCase } from "voca";
-import { ChromosomesSelector } from "./ChromosomesSelector";
-import { GenderSelector } from "./GenderSelector";
-import { SeedWordInputter } from "./SeedWordInputter";
-import * as constants from "../../constants";
+import { ChromosomesSelector } from "./form_subcomponents/ChromosomesSelector";
+import { GenderSelector } from "./form_subcomponents/GenderSelector";
+import { SeedWordInputter } from "./form_subcomponents/SeedWordInputter";
+import * as constants from "../constants";
 
 export default class GodForm extends React.Component {
   constructor(props) {
