@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import React from "react";
 import PantheonContainer from "./PantheonContainer";
 import { About } from "../components/About";
