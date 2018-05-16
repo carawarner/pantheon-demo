@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p --progress --config webpack.config.js",
     "dev-build": "webpack --progress -d --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --progress -d --config webpack.config.js --watch",
     "scss": "node-sass --watch scss -o css"
   },
@@ -23,6 +23,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
     "prettier": "1.12.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
