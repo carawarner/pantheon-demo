@@ -22,7 +22,7 @@ export default class PantheonFormContainer extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setSourcesOfNames();
     this.setSourcesOfTexts();
   }

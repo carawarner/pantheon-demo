@@ -19,7 +19,7 @@ export const NamesSourceSelector = props => (
   </div>
 );
 NamesSourceSelector.propTypes = {
-  namesSource: PropTypes.string,
-  sourcesOfNames: PropTypes.array,
+  namesSource: PropTypes.string.isRequired,
+  sourcesOfNames: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired
 };
