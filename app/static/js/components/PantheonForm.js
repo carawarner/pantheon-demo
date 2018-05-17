@@ -12,7 +12,7 @@ export default class PantheonForm extends React.Component {
     return (
       <div className="text-is-centered">
         <form className="pantheon-form" onSubmit={this.props.onSubmit}>
-          <h4>Parents of Creation</h4>
+          <h2>Parents of Creation</h2>
           <div className="pantheon-form-description">1st God of Creation</div>
           <GodForm
             chromosomes={constants.XX}
@@ -26,7 +26,7 @@ export default class PantheonForm extends React.Component {
             onChange={this.props.onEmbeddedFormChange}
           />
 
-          <h4>Sources</h4>
+          <h2>Sources</h2>
           <NamesSourceSelector
             namesSource={this.props.namesSource}
             sourcesOfNames={this.props.sourcesOfNames}
