@@ -7,6 +7,7 @@ export const SeedWordInputter = props => (
     <input
       type="text"
       placeholder={props.seedWord || ""}
+      id={props.name}
       name={props.name}
       onChange={props.onChange}
     />

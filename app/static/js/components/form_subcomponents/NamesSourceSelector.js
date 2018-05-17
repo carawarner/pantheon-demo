@@ -6,6 +6,7 @@ export const NamesSourceSelector = props => (
     <label htmlFor="namesSource">Pick Names</label>
     <select
       placeholder="names"
+      id="namesSource"
       name="namesSource"
       value={props.namesSource}
       onChange={props.onChange}

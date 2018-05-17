@@ -6,6 +6,7 @@ export const ChromosomesSelector = props => (
   <div className="pantheon-form-item">
     <label htmlFor="chromosomes">Chromosomes</label>
     <select
+      id="chromosomes"
       name="chromosomes"
       value={props.chromosomes}
       onChange={props.onChange}

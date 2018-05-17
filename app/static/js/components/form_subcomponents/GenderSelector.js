@@ -5,7 +5,12 @@ import * as constants from "../../constants";
 export const GenderSelector = props => (
   <div className="pantheon-form-item">
     <label htmlFor="gender">Gender</label>
-    <select name="gender" value={props.gender} onChange={props.onChange}>
+    <select
+      id="gender"
+      name="gender"
+      value={props.gender}
+      onChange={props.onChange}
+    >
       <option value="" disabled>
         choose...
       </option>
