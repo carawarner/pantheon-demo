@@ -1,6 +1,6 @@
-*.pyc
 __pycache__
 app/static/dist
 app/static/node_modules
 app/venv
+__test__
 .DS_Store
