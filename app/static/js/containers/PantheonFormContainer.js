@@ -95,8 +95,6 @@ export default class PantheonFormContainer extends React.Component {
       !this.state.isLoading &&
       !!this.state.namesSource &&
       !!this.state.textsSource &&
-      !!this.state.godA.isValid &&
-      !!this.state.godB.isValid &&
       this.state.godA.chromosomes !== this.state.godB.chromosomes
     );
   }
