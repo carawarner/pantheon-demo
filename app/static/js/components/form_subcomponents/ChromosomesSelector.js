@@ -4,7 +4,6 @@ import * as constants from "../../constants";
 
 export const ChromosomesSelector = props => (
   <div className="pantheon-form-item">
-    <label htmlFor="chromosomes">Chromosomes</label>
     <select
       id="chromosomes"
       name="chromosomes"
@@ -14,6 +13,7 @@ export const ChromosomesSelector = props => (
       <option value={constants.XX}>XX (egg donor)</option>
       <option value={constants.XY}>XY (sperm donor)</option>
     </select>
+    <label htmlFor="chromosomes">Chromosomes</label>
   </div>
 );
 ChromosomesSelector.propTypes = {

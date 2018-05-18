@@ -4,7 +4,6 @@ import * as constants from "../../constants";
 
 export const GenderSelector = props => (
   <div className="pantheon-form-item">
-    <label htmlFor="gender">Gender</label>
     <select
       id="gender"
       name="gender"
@@ -20,6 +19,7 @@ export const GenderSelector = props => (
         </option>
       ))}
     </select>
+    <label htmlFor="gender">Gender</label>
   </div>
 );
 GenderSelector.propTypes = {

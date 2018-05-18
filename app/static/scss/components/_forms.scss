@@ -16,7 +16,7 @@
   margin-top: 20px;
 }
 .pantheon-form-description {
-  color: $light-gray-color;
+  font-weight: 700;
   margin-top: 40px;
 }
 .qualifier {
@@ -54,6 +54,13 @@
     position: absolute;
     bottom: 0px;
     left: 0px;
+    &:focus {
+      border-bottom: 1px solid $yellow-color;
+    }
+    &:focus + label {
+      color: $yellow-color;
+      font-weight: 700;
+    }
   }
   select {
     border-radius: 0px;

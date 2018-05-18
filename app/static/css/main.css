@@ -130,7 +130,7 @@ body {
   margin-top: 20px; }
 
 .pantheon-form-description {
-  color: #aaaaaa;
+  font-weight: 700;
   margin-top: 40px; }
 
 .qualifier, .pantheon-form-qualifier {
@@ -166,6 +166,17 @@ body {
   position: absolute;
   bottom: 0px;
   left: 0px; }
+  .god-form input:focus,
+  .god-form select:focus,
+  .pantheon-form input:focus,
+  .pantheon-form select:focus {
+    border-bottom: 1px solid #f4bc50; }
+  .god-form input:focus + label,
+  .god-form select:focus + label,
+  .pantheon-form input:focus + label,
+  .pantheon-form select:focus + label {
+    color: #f4bc50;
+    font-weight: 700; }
 
 .god-form select,
 .pantheon-form select {
