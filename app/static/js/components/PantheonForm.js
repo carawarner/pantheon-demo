@@ -38,7 +38,7 @@ export default class PantheonForm extends React.Component {
             onChange={this.props.onChange}
           />
           <div className="pantheon-form-section">
-            <button>Generate</button>
+            <button disabled={!this.props.submittable}>Generate</button>
           </div>
         </form>
       </div>
@@ -53,5 +53,6 @@ PantheonForm.propTypes = {
   textsSource: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onEmbeddedFormChange: PropTypes.func.isRequired,
+  submittable: PropTypes.bool.isRequired,
   onSubmit: PropTypes.func.isRequired
 };

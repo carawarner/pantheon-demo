@@ -96,6 +96,7 @@ export default class PantheonFormContainer extends React.Component {
         textsSource={this.state.textsSource}
         onChange={this.handleChange}
         onEmbeddedFormChange={this.handleEmbeddedFormChange}
+        submittable={false}
         onSubmit={this.handleSubmit}
       />
     );
