@@ -14,7 +14,8 @@ export default class PantheonFormContainer extends React.Component {
       sourcesOfNames: [],
       sourcesOfTexts: [],
       godA: "",
-      godB: ""
+      godB: "",
+      isLoading: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,7 +41,8 @@ export default class PantheonFormContainer extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
-    this.props.isLoading(true);
+    this.setState({ isLoading: true });
+    this.props.showSpinner(true);
 
     const jsonData = {
       namesSource: this.state.namesSource,
@@ -58,7 +60,8 @@ export default class PantheonFormContainer extends React.Component {
       console.log(error);
     }
 
-    this.props.isLoading(false);
+    this.props.showSpinner(false);
+    this.setState({ isLoading: false });
   }
 
   async setSourcesOfNames() {
@@ -87,6 +90,17 @@ export default class PantheonFormContainer extends React.Component {
     }
   }
 
+  isValidAndNotLoading() {
+    return (
+      !this.state.isLoading &&
+      !!this.state.namesSource &&
+      !!this.state.textsSource &&
+      !!this.state.godA.isValid &&
+      !!this.state.godB.isValid &&
+      this.state.godA.chromosomes !== this.state.godB.chromosomes
+    );
+  }
+
   render() {
     return (
       <PantheonForm
@@ -96,7 +110,7 @@ export default class PantheonFormContainer extends React.Component {
         textsSource={this.state.textsSource}
         onChange={this.handleChange}
         onEmbeddedFormChange={this.handleEmbeddedFormChange}
-        submittable={false}
+        submittable={this.isValidAndNotLoading()}
         onSubmit={this.handleSubmit}
       />
     );
@@ -105,5 +119,5 @@ export default class PantheonFormContainer extends React.Component {
 
 PantheonFormContainer.propTypes = {
   updateGods: PropTypes.func.isRequired,
-  isLoading: PropTypes.func.isRequired
+  showSpinner: PropTypes.func.isRequired
 };

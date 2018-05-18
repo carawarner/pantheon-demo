@@ -4,7 +4,7 @@ import PantheonFormContainer from "../PantheonFormContainer";
 
 it("renders without crashing", () => {
   shallow(
-    <PantheonFormContainer updateGods={() => {}} isLoading={() => {}} />,
+    <PantheonFormContainer updateGods={() => {}} showSpinner={() => {}} />,
     { disableLifecycleMethods: true }
   );
 });

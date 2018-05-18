@@ -9,18 +9,18 @@ export default class PantheonContainer extends React.Component {
     super(props);
     this.state = {
       gods: [],
-      loading: false
+      showSpinner: false
     };
     this.updateGods = this.updateGods.bind(this);
-    this.isLoading = this.isLoading.bind(this);
+    this.showSpinner = this.showSpinner.bind(this);
   }
 
   updateGods(gods) {
     this.setState({ gods: gods });
   }
 
-  isLoading(loading) {
-    this.setState({ loading: loading });
+  showSpinner(spin) {
+    this.setState({ showSpinner: spin });
   }
 
   render() {
@@ -29,11 +29,11 @@ export default class PantheonContainer extends React.Component {
         <section>
           <PantheonFormContainer
             updateGods={this.updateGods}
-            isLoading={this.isLoading}
+            showSpinner={this.showSpinner}
           />
         </section>
         <section>
-          {this.state.loading ? (
+          {this.state.showSpinner ? (
             <FontAwesomeIcon
               icon={faSpinner}
               className="fa-spin pantheon-form-spinner"
