@@ -6,7 +6,7 @@ export const Pantheon = function(props) {
   return (
     <div className="text-is-centered">
       {props.gods.length > 0 && (
-        <h3 className="title">Generated {props.gods.length} Deities</h3>
+        <h2 className="title">Generated {props.gods.length} Deities</h2>
       )}
 
       {props.gods.map((god, i) => (
