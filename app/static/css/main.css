@@ -1,47 +1,74 @@
-.typography input, .typography textarea, .typography select, body {
+.typography input,
+.typography textarea,
+.typography select, body {
   color: #3c4858;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
+  line-height: 1.4em;
   font-weight: 300;
   -webkit-font-smoothing: antialiased; }
 
-.h1, .typography h1, .typography .h1, .h2, .typography h2, .typography .h2, .h3, .typography h3, .typography .h3, .h4, .typography h4, .typography .h4, .h5, .typography h5, .typography .h5, .h6, .typography h6, .typography .h6 {
+.h1, .typography h1,
+.typography .h1,
+.h2, .typography h2,
+.typography .h2,
+.h3, .typography h3,
+.typography .h3,
+.h4, .typography h4,
+.typography .h4,
+.h5, .typography h5,
+.typography .h5,
+.h6, .typography h6,
+.typography .h6 {
   color: #3c4858;
   font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 700;
   font-size: 14px; }
 
-.italic, .typography i, .typography em {
+.italic, .typography i,
+.typography em {
   font-style: italic; }
 
-.bold, .typography b, .typography strong {
+.bold, .typography b,
+.typography strong {
   font-weight: 700; }
 
-.h1, .typography h1, .typography .h1 {
+.h1, .typography h1,
+.typography .h1 {
   font-size: 240%; }
 
-.h2, .typography h2, .typography .h2 {
+.h2, .typography h2,
+.typography .h2 {
   font-size: 200%; }
 
-.h3, .typography h3, .typography .h3 {
+.h3, .typography h3,
+.typography .h3 {
   font-size: 160%; }
 
-.h4, .typography h4, .typography .h4 {
+.h4, .typography h4,
+.typography .h4 {
   font-size: 130%; }
 
-.h5, .typography h5, .typography .h5 {
+.h5, .typography h5,
+.typography .h5 {
   font-size: 100%; }
 
-.h6, .typography h6, .typography .h6 {
+.h6, .typography h6,
+.typography .h6 {
   font-size: 100%; }
 
-.block-margins, .typography p, .typography ul, .typography ol, .typography pre {
+.block-margins, .typography p,
+.typography ul,
+.typography ol,
+.typography pre {
   margin: 1em 0; }
 
-.unordered-list, .typography ul {
+.unordered-list,
+.typography ul {
   list-style-type: disc; }
 
-.ordered-list, .typography ol {
+.ordered-list,
+.typography ol {
   list-style: decimal; }
 
 .link, .typography a {
@@ -54,22 +81,34 @@
     color: #fdbf47;
     text-decoration: underline; }
 
-.typography h1, .typography h1, .typography .h1 {
-  margin: 1em 0 0.5em; }
+.typography h1,
+.typography h1,
+.typography .h1 {
+  margin: 1em 0 1em; }
 
-.typography h2, .typography h2, .typography .h2 {
+.typography h2,
+.typography h2,
+.typography .h2 {
   margin: 1.5em 0 0.5em; }
 
-.typography h3, .typography h3, .typography .h3 {
+.typography h3,
+.typography h3,
+.typography .h3 {
   margin: 1.5em 0 0.5em; }
 
-.typography h4, .typography h4, .typography .h4 {
+.typography h4,
+.typography h4,
+.typography .h4 {
   margin: 2em 0 0.5em; }
 
-.typography h5, .typography h5, .typography .h5 {
+.typography h5,
+.typography h5,
+.typography .h5 {
   margin: 2em 0 0.5em; }
 
-.typography h6, .typography h6, .typography .h6 {
+.typography h6,
+.typography h6,
+.typography .h6 {
   margin: 2em 0 0.5em; }
 
 .typography label {

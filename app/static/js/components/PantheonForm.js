@@ -12,6 +12,11 @@ export default class PantheonForm extends React.Component {
     return (
       <div className="text-is-centered">
         <form className="pantheon-form" onSubmit={this.props.onSubmit}>
+          <p className="description">
+            Fill out the form below <b>(all fields are required)</b>. Your
+            "Parents of Creation" will procreate, producing divine children,
+            grandchildren, great-grandchildren, etc.
+          </p>
           <h2>Parents of Creation</h2>
           <GodForm
             chromosomes={constants.XX}

@@ -7,7 +7,7 @@ export const About = function(props) {
       <p className="description">
         This is a{" "}
         <a className="link" href="https://github.com/carawarner/pantheon-demo">
-          beta demo
+          demo
         </a>{" "}
         of the{" "}
         <a className="link" href="https://github.com/carawarner/pantheon">
