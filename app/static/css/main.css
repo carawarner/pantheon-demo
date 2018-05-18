@@ -114,7 +114,13 @@ body {
   .pantheon-button:hover:enabled, .pantheon-form button:hover:enabled {
     background-color: #fdbf47; }
   .pantheon-button:focus, .pantheon-form button:focus {
-    outline: none; }
+    outline: none;
+    background-color: #fdbf47; }
+
+.god-form-preview {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.5em 0 0.5em; }
 
 .pantheon-form {
   width: 100%;
@@ -130,10 +136,6 @@ body {
   height: 45px;
   position: relative;
   margin-top: 20px; }
-
-.pantheon-form-description {
-  font-weight: 700;
-  margin-top: 40px; }
 
 .qualifier, .pantheon-form-qualifier {
   color: #aaaaaa;

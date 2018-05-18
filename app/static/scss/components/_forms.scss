@@ -1,3 +1,8 @@
+.god-form-preview {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.5em 0 0.5em;
+}
 .pantheon-form {
   width: 100%;
   max-width: 400px;
@@ -14,10 +19,6 @@
   height: 45px;
   position: relative;
   margin-top: 20px;
-}
-.pantheon-form-description {
-  font-weight: 700;
-  margin-top: 40px;
 }
 .qualifier {
   color: $light-gray-color;
