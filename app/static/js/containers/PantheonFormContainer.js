@@ -90,11 +90,12 @@ export default class PantheonFormContainer extends React.Component {
     }
   }
 
-  isValidAndNotLoading() {
+  isValid() {
     return (
-      !this.state.isLoading &&
       !!this.state.namesSource &&
       !!this.state.textsSource &&
+      !!this.state.godA.isValid &&
+      !!this.state.godB.isValid &&
       this.state.godA.chromosomes !== this.state.godB.chromosomes
     );
   }
@@ -108,7 +109,7 @@ export default class PantheonFormContainer extends React.Component {
         textsSource={this.state.textsSource}
         onChange={this.handleChange}
         onEmbeddedFormChange={this.handleEmbeddedFormChange}
-        submittable={this.isValidAndNotLoading()}
+        submittable={this.isValid() && !this.isLoading}
         onSubmit={this.handleSubmit}
       />
     );

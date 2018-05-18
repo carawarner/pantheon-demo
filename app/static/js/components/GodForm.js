@@ -13,21 +13,32 @@ export default class GodForm extends React.Component {
       chromosomes: this.props.chromosomes || constants.XX,
       gender: "",
       seedWordA: "",
-      seedWordB: ""
+      seedWordB: "",
+      isValid: false
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
+  isValid(state) {
+    return (
+      !!state.chromosomes &&
+      !!state.gender &&
+      !!state.seedWordA && // Should also be checking alpha-only, no whitespace
+      !!state.seedWordB // Should also be checking alpha-only, no whitespace
+    );
+  }
+
   handleChange(e) {
     const target = e.target;
 
-    console.log(`Setting ${target.name}: ${target.value}`);
-    this.setState({
-      [target.name]: target.value
-    });
     const newState = Object.assign(this.state, { [target.name]: target.value });
-    this.props.onChange(this.props.godID, newState);
+    const validatedState = Object.assign(newState, {
+      isValid: this.isValid(newState)
+    });
+
+    this.setState(validatedState);
+    this.props.onChange(this.props.godID, validatedState);
   }
 
   render() {
