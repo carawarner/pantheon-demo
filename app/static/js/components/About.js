@@ -19,9 +19,9 @@ export const About = function() {
       </p>
 
       <p className="description">
-        Fill out the form below <b>(all fields are required)</b>. Your "Parents
-        of Creation" will procreate, producing divine children, grandchildren,
-        great-grandchildren, etc. This is your pantheon.
+        Fill out the form below <b>(all fields are required)</b>. Your{" "}
+        {"Parents of Creation"} will procreate, producing divine children,
+        grandchildren, great-grandchildren, etc. This is your pantheon.
       </p>
     </div>
   );

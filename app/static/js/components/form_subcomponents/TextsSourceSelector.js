@@ -16,7 +16,7 @@ export const TextsSourceSelector = props => (
         </option>
       ))}
     </select>
-    <label htmlFor="textsSource">Pick a "Gene Pool"</label>
+    <label htmlFor="textsSource">Pick a {"Gene Pool"}</label>
     <div className="pantheon-form-qualifier">
       The Gene Pool is the corpora from which related words will be drawn.
     </div>
