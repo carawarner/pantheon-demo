@@ -5,7 +5,6 @@ import * as constants from "../constants";
 import GodForm from "./GodForm";
 import { NamesSourceSelector } from "./form_subcomponents/NamesSourceSelector";
 import { TextsSourceSelector } from "./form_subcomponents/TextsSourceSelector";
-import { getRandomItem } from "../utilities";
 
 export default class PantheonForm extends React.Component {
   render() {

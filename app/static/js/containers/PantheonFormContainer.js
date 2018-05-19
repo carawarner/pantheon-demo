@@ -52,10 +52,9 @@ export default class PantheonFormContainer extends React.Component {
     try {
       const response = await axios.post("/api/gods", jsonData);
       const gods = response.data.gods;
-      console.log(gods);
       this.props.updateGods(gods);
     } catch (error) {
-      console.log(error);
+      //Sentry?
     }
 
     this.props.isLoading(false);
@@ -70,7 +69,7 @@ export default class PantheonFormContainer extends React.Component {
         namesSource: getRandomItem(names)
       });
     } catch (error) {
-      console.log(error);
+      //Sentry?
     }
   }
 
@@ -83,7 +82,7 @@ export default class PantheonFormContainer extends React.Component {
         textsSource: getRandomItem(texts)
       });
     } catch (error) {
-      console.log(error);
+      //Sentry?
     }
   }
 
