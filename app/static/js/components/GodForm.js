@@ -22,7 +22,6 @@ export default class GodForm extends React.Component {
   handleChange(e) {
     const target = e.target;
 
-    console.log(`Setting ${target.name}: ${target.value}`);
     this.setState({
       [target.name]: target.value
     });
@@ -68,5 +67,6 @@ export default class GodForm extends React.Component {
 
 GodForm.propTypes = {
   chromosomes: PropTypes.string,
-  godID: PropTypes.string.isRequired
+  godID: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
