@@ -32,6 +32,9 @@ export default class GodForm extends React.Component {
   handleChange(e) {
     const target = e.target;
 
+    this.setState({
+      [target.name]: target.value
+    });
     const newState = Object.assign(this.state, { [target.name]: target.value });
     const validatedState = Object.assign(newState, {
       isValid: this.isValid(newState)
@@ -79,5 +82,6 @@ export default class GodForm extends React.Component {
 
 GodForm.propTypes = {
   chromosomes: PropTypes.string,
-  godID: PropTypes.string.isRequired
+  godID: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };

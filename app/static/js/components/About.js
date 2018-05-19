@@ -1,6 +1,6 @@
 import React from "react";
 
-export const About = function(props) {
+export const About = function() {
   return (
     <div className="text-is-centered">
       <h1 className="title">Pantheon Generator</h1>
