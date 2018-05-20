@@ -2,9 +2,15 @@
 
 ![Travis](https://img.shields.io/travis/carawarner/pantheon-demo/master.svg)
 
-This is a full-stack web app built to showcase the [Pantheon Generator](https://github.com/carawarner/pantheon), a Python package I wrote for [r/proceduralgeneration](https://www.reddit.com/r/proceduralgeneration/comments/6lt82x/monthly_challenge_20_july_2017_procedural/). It's live on [pantheon.carawarner.com](pantheon.carawarner.com).
+This full-stack app showcases the [Pantheon Generator](https://github.com/carawarner/pantheon), a Python package I wrote for [r/proceduralgeneration](https://www.reddit.com/r/proceduralgeneration/comments/6lt82x/monthly_challenge_20_july_2017_procedural/).
 
-## Stack
+## Links
+
+1. [Try](pantheon.carawarner.com) the generator
+1. [Enjoy](https://github.com/carawarner/pantheon/wiki/Example-Output) sample output
+1. [Read](https://speakerdeck.com/carawarner/procedural-pantheon?slide=36) Mridula's story
+
+## Tech Stack
 
 ### Application
 
