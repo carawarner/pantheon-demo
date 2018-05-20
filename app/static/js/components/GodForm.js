@@ -4,13 +4,13 @@ import { titleCase } from "voca";
 import { ChromosomesSelector } from "./form_subcomponents/ChromosomesSelector";
 import { GenderSelector } from "./form_subcomponents/GenderSelector";
 import { SeedWordInputter } from "./form_subcomponents/SeedWordInputter";
-import * as constants from "../constants";
+import { XX, genderTitleMap } from "../constants";
 
 export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: this.props.chromosomes || constants.XX,
+      chromosomes: this.props.chromosomes || XX,
       gender: "",
       seedWordA: "",
       seedWordB: "",
@@ -45,7 +45,7 @@ export default class GodForm extends React.Component {
   }
 
   render() {
-    const godTitle = constants.genderTitleMap[this.state.gender] || "...";
+    const godTitle = genderTitleMap[this.state.gender] || "...";
     const domainA = titleCase(this.state.seedWordA) || "...";
     const domainB = titleCase(this.state.seedWordB) || "...";
 

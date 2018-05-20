@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import * as constants from "../constants";
+import { XX, XY } from "../constants";
 import GodForm from "./GodForm";
 import { About } from "./About";
 import { NamesSourceSelector } from "./form_subcomponents/NamesSourceSelector";
@@ -15,12 +15,12 @@ export default class PantheonForm extends React.Component {
           <About />
           <h2>Parents of Creation</h2>
           <GodForm
-            chromosomes={constants.XX}
+            chromosomes={XX}
             godID="godA"
             onChange={this.props.onEmbeddedFormChange}
           />
           <GodForm
-            chromosomes={constants.XY}
+            chromosomes={XY}
             godID="godB"
             onChange={this.props.onEmbeddedFormChange}
           />

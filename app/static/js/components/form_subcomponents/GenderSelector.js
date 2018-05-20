@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as constants from "../../constants";
+import { genderLabelMap } from "../../constants";
 
 export const GenderSelector = props => (
   <div className="pantheon-form-item">
@@ -10,12 +10,10 @@ export const GenderSelector = props => (
       value={props.gender}
       onChange={props.onChange}
     >
-      <option value="" disabled>
-        choose...
-      </option>
-      {Object.keys(constants.genderLabelMap).map((gender, i) => (
+      <option value="" disabled />
+      {Object.keys(genderLabelMap).map((gender, i) => (
         <option value={gender} key={"gender_" + i}>
-          {constants.genderLabelMap[gender][props.chromosomes]}
+          {genderLabelMap[gender][props.chromosomes]}
         </option>
       ))}
     </select>
