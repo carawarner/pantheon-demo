@@ -11,6 +11,7 @@ it("renders without crashing", () => {
       textsSource=""
       onChange={() => {}}
       onEmbeddedFormChange={() => {}}
+      submittable={true}
       onSubmit={() => {}}
     />
   );

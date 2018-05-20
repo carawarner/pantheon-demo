@@ -1,18 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as constants from "../../constants";
+import { XX, XY } from "../../constants";
 
 export const ChromosomesSelector = props => (
   <div className="pantheon-form-item">
-    <label htmlFor="chromosomes">Chromosomes</label>
     <select
+      id="chromosomes"
       name="chromosomes"
       value={props.chromosomes}
       onChange={props.onChange}
     >
-      <option value={constants.XX}>XX (egg donor)</option>
-      <option value={constants.XY}>XY (sperm donor)</option>
+      <option value={XX} disabled={props.chromosomes == XY}>
+        XX (egg donor)
+      </option>
+      <option value={XY} disabled={props.chromosomes == XX}>
+        XY (sperm donor)
+      </option>
     </select>
+    <label htmlFor="chromosomes">Chromosomes</label>
   </div>
 );
 ChromosomesSelector.propTypes = {

@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 
 export const SeedWordInputter = props => (
   <div className="pantheon-form-item">
-    <label htmlFor={props.name}>{props.label}</label>
     <input
       type="text"
       placeholder={props.seedWord || ""}
+      id={props.name}
       name={props.name}
       onChange={props.onChange}
     />
+    <label htmlFor={props.name}>{props.label}</label>
   </div>
 );
 SeedWordInputter.propTypes = {

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 export const NamesSourceSelector = props => (
   <div className="pantheon-form-item">
-    <label htmlFor="namesSource">Pick Names</label>
     <select
       placeholder="names"
+      id="namesSource"
       name="namesSource"
       value={props.namesSource}
       onChange={props.onChange}
@@ -16,6 +16,7 @@ export const NamesSourceSelector = props => (
         </option>
       ))}
     </select>
+    <label htmlFor="namesSource">Pick Names</label>
   </div>
 );
 NamesSourceSelector.propTypes = {

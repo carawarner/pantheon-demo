@@ -1,47 +1,75 @@
-.typography input, .typography textarea, .typography select, body {
+.typography input,
+.typography textarea,
+.typography select, body {
   color: #3c4858;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
+  line-height: 1.4em;
   font-weight: 300;
   -webkit-font-smoothing: antialiased; }
 
-.h1, .typography h1, .typography .h1, .h2, .typography h2, .typography .h2, .h3, .typography h3, .typography .h3, .h4, .typography h4, .typography .h4, .h5, .typography h5, .typography .h5, .h6, .typography h6, .typography .h6 {
+.h1, .typography h1,
+.typography .h1,
+.h2, .typography h2,
+.typography .h2,
+.h3, .typography h3,
+.typography .h3,
+.h4, .typography h4,
+.typography .h4,
+.h5, .typography h5,
+.typography .h5,
+.h6, .typography h6,
+.typography .h6 {
   color: #3c4858;
   font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 700;
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 1em; }
 
-.italic, .typography i, .typography em {
+.italic, .typography i,
+.typography em {
   font-style: italic; }
 
-.bold, .typography b, .typography strong {
+.bold, .typography b,
+.typography strong {
   font-weight: 700; }
 
-.h1, .typography h1, .typography .h1 {
+.h1, .typography h1,
+.typography .h1 {
   font-size: 240%; }
 
-.h2, .typography h2, .typography .h2 {
+.h2, .typography h2,
+.typography .h2 {
   font-size: 200%; }
 
-.h3, .typography h3, .typography .h3 {
+.h3, .typography h3,
+.typography .h3 {
   font-size: 160%; }
 
-.h4, .typography h4, .typography .h4 {
+.h4, .typography h4,
+.typography .h4 {
   font-size: 130%; }
 
-.h5, .typography h5, .typography .h5 {
+.h5, .typography h5,
+.typography .h5 {
   font-size: 100%; }
 
-.h6, .typography h6, .typography .h6 {
+.h6, .typography h6,
+.typography .h6 {
   font-size: 100%; }
 
-.block-margins, .typography p, .typography ul, .typography ol, .typography pre {
+.block-margins, .typography p,
+.typography ul,
+.typography ol,
+.typography pre {
   margin: 1em 0; }
 
-.unordered-list, .typography ul {
+.unordered-list,
+.typography ul {
   list-style-type: disc; }
 
-.ordered-list, .typography ol {
+.ordered-list,
+.typography ol {
   list-style: decimal; }
 
 .link, .typography a {
@@ -54,22 +82,34 @@
     color: #fdbf47;
     text-decoration: underline; }
 
-.typography h1, .typography h1, .typography .h1 {
-  margin: 1em 0 0.5em; }
+.typography h1,
+.typography h1,
+.typography .h1 {
+  margin: 1em 0 1em; }
 
-.typography h2, .typography h2, .typography .h2 {
+.typography h2,
+.typography h2,
+.typography .h2 {
   margin: 1.5em 0 0.5em; }
 
-.typography h3, .typography h3, .typography .h3 {
+.typography h3,
+.typography h3,
+.typography .h3 {
   margin: 1.5em 0 0.5em; }
 
-.typography h4, .typography h4, .typography .h4 {
+.typography h4,
+.typography h4,
+.typography .h4 {
   margin: 2em 0 0.5em; }
 
-.typography h5, .typography h5, .typography .h5 {
+.typography h5,
+.typography h5,
+.typography .h5 {
   margin: 2em 0 0.5em; }
 
-.typography h6, .typography h6, .typography .h6 {
+.typography h6,
+.typography h6,
+.typography .h6 {
   margin: 2em 0 0.5em; }
 
 .typography label {
@@ -81,7 +121,7 @@
  */
 body {
   background-color: #fff;
-  padding: 30px; }
+  padding: 1em; }
 
 /**
  * Modifiers
@@ -99,7 +139,7 @@ body {
 
 .pantheon-button, .pantheon-form button {
   border: none;
-  background: #f4bc50;
+  background-color: #f4bc50;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -109,15 +149,23 @@ body {
   margin: 10px;
   padding: 0 30px;
   text-transform: uppercase; }
-  .pantheon-button:hover, .pantheon-form button:hover {
+  .pantheon-button:disabled, .pantheon-form button:disabled {
+    background-color: #838198; }
+  .pantheon-button:hover:enabled, .pantheon-form button:hover:enabled {
     background-color: #fdbf47; }
   .pantheon-button:focus, .pantheon-form button:focus {
-    outline: none; }
+    outline: none;
+    background-color: #fdbf47; }
+
+.god-form-preview {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.5em 0 0.5em; }
 
 .pantheon-form {
   width: 100%;
-  max-width: 400px;
-  min-width: 250px;
+  max-width: 30em;
+  min-width: 15em;
   margin-left: auto;
   margin-right: auto; }
   .pantheon-form button {
@@ -129,13 +177,9 @@ body {
   position: relative;
   margin-top: 20px; }
 
-.pantheon-form-description {
-  color: #aaaaaa;
-  margin-top: 40px; }
-
 .qualifier, .pantheon-form-qualifier {
   color: #aaaaaa;
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic; }
 
 .pantheon-form-qualifier {
@@ -166,6 +210,17 @@ body {
   position: absolute;
   bottom: 0px;
   left: 0px; }
+  .god-form input:focus,
+  .god-form select:focus,
+  .pantheon-form input:focus,
+  .pantheon-form select:focus {
+    border-bottom: 1px solid #f4bc50; }
+  .god-form input:focus + label,
+  .god-form select:focus + label,
+  .pantheon-form input:focus + label,
+  .pantheon-form select:focus + label {
+    color: #f4bc50;
+    font-weight: 700; }
 
 .god-form select,
 .pantheon-form select {
@@ -174,7 +229,7 @@ body {
 
 .god-form label,
 .pantheon-form label {
-  font-size: 12px;
+  font-size: 13px;
   position: absolute;
   top: 0px;
   left: 0px;

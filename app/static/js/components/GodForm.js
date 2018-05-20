@@ -4,19 +4,29 @@ import { titleCase } from "voca";
 import { ChromosomesSelector } from "./form_subcomponents/ChromosomesSelector";
 import { GenderSelector } from "./form_subcomponents/GenderSelector";
 import { SeedWordInputter } from "./form_subcomponents/SeedWordInputter";
-import * as constants from "../constants";
+import { XX, genderTitleMap } from "../constants";
 
 export default class GodForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chromosomes: this.props.chromosomes || constants.XX,
+      chromosomes: this.props.chromosomes || XX,
       gender: "",
       seedWordA: "",
-      seedWordB: ""
+      seedWordB: "",
+      isValid: false
     };
 
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  isValid(state) {
+    return (
+      !!state.chromosomes &&
+      !!state.gender &&
+      !!state.seedWordA && // Should also be checking alpha-only, no whitespace
+      !!state.seedWordB // Should also be checking alpha-only, no whitespace
+    );
   }
 
   handleChange(e) {
@@ -26,11 +36,16 @@ export default class GodForm extends React.Component {
       [target.name]: target.value
     });
     const newState = Object.assign(this.state, { [target.name]: target.value });
-    this.props.onChange(this.props.godID, newState);
+    const validatedState = Object.assign(newState, {
+      isValid: this.isValid(newState)
+    });
+
+    this.setState(validatedState);
+    this.props.onChange(this.props.godID, validatedState);
   }
 
   render() {
-    const godTitle = constants.genderTitleMap[this.state.gender] || "...";
+    const godTitle = genderTitleMap[this.state.gender] || "...";
     const domainA = titleCase(this.state.seedWordA) || "...";
     const domainB = titleCase(this.state.seedWordB) || "...";
 
