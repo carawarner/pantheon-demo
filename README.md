@@ -10,10 +10,9 @@ This full-stack app showcases the [Pantheon Generator](https://github.com/carawa
 1. [Enjoy](https://github.com/carawarner/pantheon/wiki/Example-Output) sample output
 1. [Read](https://speakerdeck.com/carawarner/procedural-pantheon?slide=36) Mridula's story
 
-## Tech / Tools
+## Tech
 
-
-### Application
+_Application_
 
 - **ReactJS** - componentization of frontend elements
 - **ES6** - modern javascript
@@ -23,14 +22,14 @@ This full-stack app showcases the [Pantheon Generator](https://github.com/carawa
 - **webpack** - minifier
 - **Flask** - a "restish" API that talks JSON with the client-side app
 
-### Delivery
+_Delivery_
 
 - **Apache** - the web server
 - **WSGI** - the interface between Flask and Apache
 - **Docker** - containerization
 - **Amazon Lightsail** - virtual private server
 
-### Continuous Integration
+_Continuous Integration_
 
 - **Enzyme** - test framework for react
 - **Jest** - test runner
