@@ -15,8 +15,6 @@ This full-stack app showcases the [Pantheon Generator](https://github.com/carawa
 _Application_
 
 - **ReactJS** - componentization of frontend elements
-- **ES6** - modern javascript
-- **HTML5** - modern HTML
 - **npm** - dependency management
 - **Babel** - transpiler
 - **webpack** - minifier
@@ -24,7 +22,7 @@ _Application_
 
 _Delivery_
 
-- **Apache** - the web server
+- **Apache** - the web server ([to be replaced](https://github.com/carawarner/pantheon-demo/issues/60) by nginx)
 - **WSGI** - the interface between Flask and Apache
 - **Docker** - containerization
 - **Amazon Lightsail** - virtual private server
