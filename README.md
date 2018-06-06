@@ -6,7 +6,7 @@ This full-stack app showcases the [Pantheon Generator](https://github.com/carawa
 
 ## Links
 
-1. [Try](pantheon.carawarner.com) the pantheon generator.
+1. [Try](http://pantheon.carawarner.com) the pantheon generator.
 1. [Enjoy](https://github.com/carawarner/pantheon/wiki/Example-Output) some sample output.
 1. [Read](https://speakerdeck.com/carawarner/procedural-pantheon?slide=36) Mridula's story.
 
