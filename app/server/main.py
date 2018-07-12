@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from app import app
+app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
 
 from pantheon.pantheons import Pantheon
 from pantheon.gods import God
@@ -37,3 +37,6 @@ def fetch_gods():
     gods = [god.__dict__ for god in list(pantheon.__dict__['gods'].values())]
 
     return jsonify({'gods': gods})
+
+if __name__ == '__main__':
+    app.run()

@@ -3,5 +3,5 @@ __pycache__
 app/static/coverage
 app/static/dist
 app/static/node_modules
-app/venv
+app/server/venv
 .DS_Store
