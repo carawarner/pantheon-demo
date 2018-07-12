@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name server_domain_or_IP;
+
+    access_log /var/log/nginx/pantheon_access.log;
+    error_log /var/log/nginx/pantheon_error.log;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/run/uwsgi/pantheon.sock;
+    }
+}
