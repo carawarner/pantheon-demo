@@ -22,8 +22,8 @@ _Application_
 
 _Delivery_
 
-- **Apache** - the web server ([to be replaced](https://github.com/carawarner/pantheon-demo/issues/60) by nginx)
-- **WSGI** - the interface between Flask and Apache
+- **nginx** - the web server
+- **uWSGI** - the interface between Flask and Apache
 - **Docker** - containerization
 - **Amazon Lightsail** - virtual private server
 
