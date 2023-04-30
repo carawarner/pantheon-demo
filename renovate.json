@@ -1,6 +1,5 @@
 {
   "extends": ["config:base"],
-  "prhourlylimit": 10,
   "labels": ["dependencies"],
   "packageRules": [
     {
@@ -16,7 +15,8 @@
         "bump"
       ],
       "groupName": "devDependencies",
-      "semanticCommitType": "chore"
+      "semanticCommitType": "chore",
+      "prhourlylimit": 10
     },
     {
       "matchDepTypes": ["dependencies"],
@@ -31,7 +31,8 @@
         "bump"
       ],
       "groupName": "dependencies",
-      "semanticCommitType": "chore"
+      "semanticCommitType": "chore",
+      "prhourlylimit": 10
     }
   ],
   "vulnerabilityAlerts": {
@@ -39,6 +40,7 @@
     "enabled": true,
     "schedule": [],
     "prCreation": "immediate",
-    "labels": ["renovate"]
+    "labels": ["renovate"],
+    "prhourlylimit": 10
   }
 }
