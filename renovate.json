@@ -5,6 +5,7 @@
     {
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": [
+        "major",
         "minor",
         "patch",
         "pin",
@@ -19,6 +20,7 @@
     {
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": [
+        "major",
         "minor",
         "patch",
         "pin",
