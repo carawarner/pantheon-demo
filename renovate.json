@@ -32,5 +32,12 @@
       "groupName": "dependencies",
       "semanticCommitType": "chore"
     }
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "groupName": "vulnerabilityAlerts",
+    "enabled": true,
+    "schedule": [],
+    "prCreation": "immediate",
+    "labels": ["renovate"]
+  },
 }
